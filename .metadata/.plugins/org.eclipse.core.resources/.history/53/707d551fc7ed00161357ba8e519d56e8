@@ -1,0 +1,10 @@
+package com.niit.collaborationPlatform.DAO;
+
+import com.niit.collaborationPlatform.model.Blog;
+
+public interface BlogDAO {
+
+	public boolean SaveBlog(Blog blog);
+	
+	
+}

@@ -1,0 +1,75 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaborationPlatform.DAO.BlogDAO;
+import com.niit.collaborationPlatform.model.Blog;
+
+@Repository
+public class BlogDAIOImpl implements BlogDAO {
+	
+	
+	@Autowired
+	public SessionFactory sessionFactory;
+	
+	public BlogDAIOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory=sessionFactory;
+	}
+
+	@Transactional
+	public boolean SaveBlog(Blog blog) {
+		try {
+			sessionFactory.getCurrentSession().save(blog);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Transactional
+	public boolean UpdateBlog(Blog blog) {
+		try {
+			sessionFactory.getCurrentSession().update(blog);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public boolean DeleteBlog(Blog blog) {
+		sessionFactory.getCurrentSession().delete(blog);
+		return false;
+	}
+
+	@Override
+	public Blog getid(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Blog getByid(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer maxID() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

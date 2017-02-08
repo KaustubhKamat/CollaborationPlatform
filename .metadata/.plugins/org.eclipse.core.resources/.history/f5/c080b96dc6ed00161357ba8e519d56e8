@@ -1,0 +1,9 @@
+package com.niit.collaborationPlatform.model;
+
+public class Blog {
+
+	public int id;
+	
+	public String title;
+	
+}
