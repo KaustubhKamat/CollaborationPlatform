@@ -1,0 +1,11 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BlogDAOImplTestCase {
+
+	
+
+}

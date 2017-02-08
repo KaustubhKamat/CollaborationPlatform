@@ -76,7 +76,7 @@ public class Blog {
 	
 	public String emailid;
 	
-	public Date date;
+	public Date ;
 	
 	public String status;
 	

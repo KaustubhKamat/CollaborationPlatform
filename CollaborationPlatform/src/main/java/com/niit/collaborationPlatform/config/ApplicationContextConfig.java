@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -24,9 +24,9 @@ public class ApplicationContextConfig {
 	public DriverManagerDataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("sa");
+		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
+		dataSource.setUsername("collaborationplatform");
+		dataSource.setPassword("password");
 		return dataSource;
 	}
 
@@ -34,27 +34,38 @@ public class ApplicationContextConfig {
 
 	{
 		Properties properties = new Properties();
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		properties.put("hibernate.show.sql", "true");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 		return properties;
 	}
 
 	@Autowired
-	@Bean(name = "sessionfactory")
-	public SessionFactory getSessionFactory(DataSource dataSource) {
-		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
+	@Bean(name="sessionfactory")
+	public SessionFactory getSessionFactory(DataSource dataSource)
+	{
+		LocalSessionFactoryBuilder sessionBuilder =new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		//sessionBuilder.addAnnotatedClass(User1.class);
-
-		return sessionBuilder.buildSessionFactory();
-
+		
+		
+        return sessionBuilder.buildSessionFactory();
+		
 	}
 	@Autowired
-	@Bean(name="transactionManager")
-	public HibernateTransactionManager getTransactionalManager(SessionFactory sessionFactory){
-		
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
+	@Bean("name=transactionManager")
+	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory)
+	{
+		HibernateTransactionManager transactionManager=new HibernateTransactionManager(sessionFactory);
 		return transactionManager;
 	}
-	
 }
+
+	/*@Autowired
+	@Bean
+	public CommonsMultipartResolver multipartResolver() {
+	    CommonsMultipartResolver resolver=new CommonsMultipartResolver();
+	    resolver.setDefaultEncoding("utf-8");
+	    return resolver;
+	}*/
+	

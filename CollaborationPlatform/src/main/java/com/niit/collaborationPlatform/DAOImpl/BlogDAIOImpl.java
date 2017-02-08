@@ -56,15 +56,16 @@ public class BlogDAIOImpl implements BlogDAO {
 	@Transactional
 	public Blog getid(int id) {
 		
-		return sessionFactory.getCurrentSession().get(Blog.class, id);
+		return (Blog) sessionFactory.getCurrentSession().get(Blog.class, id);
 	}
 
 	@Transactional
 	public Blog getByid(int id) {
 	
-		return sessionFactory.getCurrentSession().get(Blog.class, id);
+		return (Blog) sessionFactory.getCurrentSession().get(Blog.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Transactional
 		public List<Blog> list() {
 			String hql = "from Blog";
@@ -78,11 +79,16 @@ public class BlogDAIOImpl implements BlogDAO {
 	public Integer maxID() {
 		
 		Integer maxID=100;
-		String hql="Select max(id) from Blog";
-		Query query=sessionFactory.getCurrentSession().createQuery(hql);
-		maxID=(Integer) query.uniqueResult();
+		try {
+			String hql="Select max(id) from Blog";
+			Query query=sessionFactory.getCurrentSession().createQuery(hql);
+			maxID=(Integer) query.uniqueResult();
+		} catch (Exception e) {
+			maxID=100;
+			e.printStackTrace();
+		}
 		
-		return null;
+		return maxID+1;
 	}
 
 }
