@@ -1,0 +1,10 @@
+package com.niit.collaborationPlatform.DAO;import org.hibernate.event.spi.SaveOrUpdateEvent;
+
+import com.niit.collaborationPlatform.model.Chat;
+
+public interface ChatDAO {
+
+	public boolean SaveChat(Chat chat);
+	
+
+}

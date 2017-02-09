@@ -15,6 +15,8 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.collaborationPlatform.model.Blog;
+import com.niit.collaborationPlatform.model.Chat;
+import com.niit.collaborationPlatform.model.Job;
 
 @Configuration
 @ComponentScan("com.niit")
@@ -49,6 +51,8 @@ public class ApplicationContextConfig {
 		LocalSessionFactoryBuilder sessionBuilder =new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClass(Blog.class);
+		sessionBuilder.addAnnotatedClass(Chat.class);
+		sessionBuilder.addAnnotatedClass(Job.class);
 		
 		
         return sessionBuilder.buildSessionFactory();

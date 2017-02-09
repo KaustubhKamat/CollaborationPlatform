@@ -1,0 +1,28 @@
+package com.niit.collaborationPlatform.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+@Table
+public class Job {
+
+	@Id
+	public int id;
+	
+	public String title;
+	
+	public String qualification;
+	
+	public String description;
+	
+	public String status;
+	
+	public Date date_time;
+}

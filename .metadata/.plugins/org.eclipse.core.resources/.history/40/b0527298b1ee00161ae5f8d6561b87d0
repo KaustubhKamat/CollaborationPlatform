@@ -1,0 +1,66 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaborationPlatform.DAO.ChatDAO;
+import com.niit.collaborationPlatform.model.Chat;
+
+public class ChatDAOImpl implements ChatDAO {
+
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public ChatDAOImpl(SessionFactory sessionFactory) {
+
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+	public boolean SaveChat(Chat chat) {
+
+		try {
+			sessionFactory.getCurrentSession().save(chat);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Transactional
+	public boolean DeleteChat(Chat chat) {
+		try {
+			sessionFactory.getCurrentSession().delete(chat);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Transactional
+	public boolean UpdateChat(Chat chat) {
+		try {
+			sessionFactory.getCurrentSession().update(chat);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public Chat getById(String id) {
+		
+		return sessionFactory.getCurrentSession().getClass(Chat.class,id);
+	}
+
+	@Override
+	public List<Chat> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

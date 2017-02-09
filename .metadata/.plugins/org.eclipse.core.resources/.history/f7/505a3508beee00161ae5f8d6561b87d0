@@ -1,0 +1,84 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaborationPlatform.DAO.ChatDAO;
+import com.niit.collaborationPlatform.DAO.JobDAO;
+import com.niit.collaborationPlatform.model.Chat;
+import com.niit.collaborationPlatform.model.Job;
+
+import junit.framework.Assert;
+
+public class JobDAOImplTestCase {
+
+	@Autowired
+	static Job job ;
+	
+	@Autowired
+	static JobDAO jobDAO;
+	
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+	
+	
+	@BeforeClass
+	public static void init()
+	{
+		context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		jobDAO=(JobDAO) context.getBean("jobDAOImpl");
+         job=(Job) context.getBean("job");	
+	}
+	
+	
+	@SuppressWarnings("deprecation")
+	//@Test
+	public void CreateJobTestCase()
+	{
+		job.setId(1);
+		job.setTitle("Title 1");
+		job.setQualification("BE Mech");
+		job.setStatus("Valid");
+		Date date_time=new Date();
+		job.setDate_time(date_time);
+		Assert.assertEquals("createChatTestCase", false, chatDAO.SaveChat(chat));
+	}
+
+    @SuppressWarnings("deprecation")
+	//@Test 
+	public void DeleteChatTestCase()
+     {
+    	chat=chatDAO.getid(2);
+    	 Assert.assertEquals("DeleteChatTestCase", false, chatDAO.DeleteChat(chat));
+       
+     }
+
+    
+    @SuppressWarnings("deprecation")
+	//@Test
+    public void UpdateChatTestCase()
+    {
+   	 chat=chatDAO.getById(1);
+   	 chat.setMessage("This is second message");
+	
+    Assert.assertEquals("DeleteChatTestCase", false, chatDAO.UpdateChat(chat));
+   	 
+    }
+
+    
+    @Test
+    public void getByIDTestCase()
+    {
+    chat=chatDAO.getById(1);	
+    System.out.println(chat.getEmailid());
+    }
+    
+}

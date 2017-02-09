@@ -1,0 +1,69 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaborationPlatform.DAO.JobDAO;
+import com.niit.collaborationPlatform.model.Job;
+
+@Repository
+public class JobDAOImpl implements JobDAO {
+
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public JobDAOImpl(SessionFactory sessionFactory) {
+
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+	public boolean SaveJob(Job job) {
+		sessionFactory.getCurrentSession().save(job);
+		return false;
+	}
+
+	@Override
+	public boolean DeleteJob(Job job) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean UpdateJob(Job job) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Job getByid(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Job> getJobs(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Job> getOpenJobs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer maxID() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
+
+

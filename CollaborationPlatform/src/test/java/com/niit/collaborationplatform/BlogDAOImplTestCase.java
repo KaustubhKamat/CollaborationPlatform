@@ -62,7 +62,7 @@ public class BlogDAOImplTestCase {
 
     
     @SuppressWarnings("deprecation")
-	@Test
+	//@Test
     public void UpdateBlogTestCase()
     {
    	 blog=blogDAO.getid(11);
@@ -75,7 +75,8 @@ public class BlogDAOImplTestCase {
     @Test
     public void getByIDTestCase()
     {
-    	
+    blog=blogDAO.getByid(11);
+    System.out.println(blog.getEmailid());
     }
     
 }
