@@ -1,0 +1,4 @@
+com\niit\collaborationPlatform\config\ApplicationContextConfig.class
+com\niit\collaborationPlatform\DAO\BlogDAO.class
+com\niit\collaborationPlatform\model\Blog.class
+com\niit\collaborationPlatform\DAOImpl\BlogDAIOImpl.class

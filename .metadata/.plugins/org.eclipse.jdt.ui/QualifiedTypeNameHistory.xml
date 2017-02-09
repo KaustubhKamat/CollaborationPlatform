@@ -22,11 +22,12 @@
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="org.springframework.orm.hibernate4.LocalSessionFactoryBuilder"/>
 <fullyQualifiedTypeName name="org.springframework.orm.hibernate4.HibernateTransactionManager"/>
-<fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.Blog"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAO.BlogDAO"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
 <fullyQualifiedTypeName name="org.junit.BeforeClass"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.Blog"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
 </qualifiedTypeNameHistroy>

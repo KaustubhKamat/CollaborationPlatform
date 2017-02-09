@@ -14,6 +14,8 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.collaborationPlatform.model.Blog;
+
 @Configuration
 @ComponentScan("com.niit")
 @EnableTransactionManagement
@@ -46,7 +48,7 @@ public class ApplicationContextConfig {
 	{
 		LocalSessionFactoryBuilder sessionBuilder =new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		//sessionBuilder.addAnnotatedClass(User1.class);
+		sessionBuilder.addAnnotatedClass(Blog.class);
 		
 		
         return sessionBuilder.buildSessionFactory();

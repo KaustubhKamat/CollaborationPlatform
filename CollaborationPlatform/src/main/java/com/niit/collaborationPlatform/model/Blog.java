@@ -3,15 +3,17 @@ package com.niit.collaborationPlatform.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table
+@Table(name="Blog1")
 public class Blog {
 
+	@Id
 	public int id;
 	
 	public int getId() {
@@ -46,14 +48,7 @@ public class Blog {
 		this.emailid = emailid;
 	}
 
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
+	
 	public String getStatus() {
 		return status;
 	}
@@ -76,8 +71,16 @@ public class Blog {
 	
 	public String emailid;
 	
-	public Date ;
+	public Date date_time;
 	
+	public Date getDate_time() {
+		return date_time;
+	}
+
+	public void setDate_time(Date date_time) {
+		this.date_time = date_time;
+	}
+
 	public String status;
 	
 	public String reason;

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BlogDAOImplTestCase" project="CollaborationPlatform" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.niit.collaborationplatform.BlogDAOImplTestCase" time="0.328">
+    <testcase name="DeleteBlogTestCase" classname="com.niit.collaborationplatform.BlogDAOImplTestCase" time="0.328"/>
+  </testsuite>
+</testrun>
