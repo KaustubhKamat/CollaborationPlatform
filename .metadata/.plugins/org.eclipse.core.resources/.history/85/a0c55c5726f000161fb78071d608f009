@@ -1,0 +1,46 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaborationPlatform.DAO.UserDAO;
+import com.niit.collaborationPlatform.model.User;
+
+public class UserDAOImplTestCase {
+
+	@Autowired
+	UserDAO userDAO;
+	
+	@Autowired
+	User user;
+	
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+
+	@BeforeClass
+	public void init()
+	{
+		context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		userDAO=(UserDAO) context.getBean("userDAOImpl");
+		user=(User) context.getBean("user");
+	}
+	
+	@Test
+	public void CreateUserTestCase()
+	{
+		user.setEmailId("kaustubh235@gmail.com");
+		user.setUsername("kaustubh");
+		user.setPassword("kamat");
+		user.setRole("Admin");
+		user.setMobile("7875117414");
+		user.setGender("Male");
+		user.setStatus("Valid");
+		user.setIsOnline("Y");
+	}
+}

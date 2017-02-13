@@ -1,0 +1,71 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaborationPlatform.DAO.UserDAO;
+import com.niit.collaborationPlatform.model.User;
+
+@Repository
+public class UserDAOImpl implements UserDAO {
+
+	
+	@Autowired
+	public SessionFactory sessionFactory;
+	
+	 public UserDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory=sessionFactory;
+	}
+	
+	
+	@Transactional
+	public boolean SaveUser(User user) {
+		try {
+			sessionFactory.getCurrentSession().save(user);
+		} catch (Exception e) {
+					}
+		return false;
+	}
+
+	@Transactional
+	public boolean UpdateUser(User user) {
+		try {
+			sessionFactory.getCurrentSession().update(user);
+		} catch (Exception e) {
+					}
+		return false;
+	}
+
+	
+	@Transactional
+	public boolean DeleteUser(User user) {
+		try {
+			sessionFactory.getCurrentSession().delete(user);
+		} catch (Exception e) {
+			
+		}
+		return false;
+	}
+
+	@Transactional
+	public String getById(String emailId) {
+				return (String) sessionFactory.getCurrentSession().get(User.class, emailId);
+	}
+
+	@Override
+	public List<User> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> getAllList(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

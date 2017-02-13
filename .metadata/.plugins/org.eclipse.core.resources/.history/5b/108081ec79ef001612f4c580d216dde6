@@ -1,0 +1,14 @@
+package com.niit.collaborationPlatform.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.niit.collaborationPlatform.DAO.BlogDAO;
+
+@RestController
+public class BlogController {
+
+	@Autowired
+	public BlogDAO blogDAO;
+	
+}

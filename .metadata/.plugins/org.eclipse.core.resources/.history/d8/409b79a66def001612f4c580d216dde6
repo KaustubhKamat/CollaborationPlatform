@@ -1,0 +1,15 @@
+package com.niit.collaborationPlatform.DAO;
+
+import com.niit.collaborationPlatform.model.User;
+
+public interface UserDAO {
+
+	public boolean SaveUser(User user);
+	
+	public boolean UpdateUser(User user);
+	
+	public boolean DeleteUser(User user);
+	
+	public String getById(String emailId);
+	
+}

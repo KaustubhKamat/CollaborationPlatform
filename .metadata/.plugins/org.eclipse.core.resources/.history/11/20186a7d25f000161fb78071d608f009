@@ -1,0 +1,31 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaborationPlatform.DAO.UserDAO;
+import com.niit.collaborationPlatform.model.User;
+
+public class UserDAOImplTestCase {
+
+	@Autowired
+	UserDAO userDAO;
+	
+	@Autowired
+	User user;
+	
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+
+	@BeforeClass
+	public void init()
+	{
+		context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+	}
+}

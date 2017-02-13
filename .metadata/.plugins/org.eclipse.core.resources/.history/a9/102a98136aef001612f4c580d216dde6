@@ -1,0 +1,9 @@
+package com.niit.collaborationPlatform.DAO;
+
+import com.niit.collaborationPlatform.model.JobApplied;
+
+public interface JobAppliedDAO {
+
+	public JobApplied getJobApplication(String id);
+	
+}

@@ -1,0 +1,25 @@
+package com.niit.collaborationPlatform.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.niit.collaborationPlatform.DAO.BlogDAO;
+import com.niit.collaborationPlatform.model.User;
+
+@RestController
+public class BlogController {
+
+	@Autowired
+	public BlogDAO blogDAO;
+	
+	public ResponseEntity<List<User>> getAllBlogs()
+	{
+		List blogs=blogDAO.list();
+		return new ResponseEntity<List<User>>(blogs, HttpStatus.OK);
+	}
+	
+}

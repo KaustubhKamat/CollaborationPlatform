@@ -1,0 +1,4 @@
+127.0.0.1 - - [11/Feb/2017:16:18:24 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [11/Feb/2017:16:18:27 +0530] "GET /CollaborationPlatform/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [11/Feb/2017:16:18:27 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [11/Feb/2017:16:19:31 +0530] "GET /CollaborationPlatform/getAllBlogs HTTP/1.1" 404 1060

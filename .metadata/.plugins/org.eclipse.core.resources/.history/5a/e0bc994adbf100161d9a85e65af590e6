@@ -1,0 +1,31 @@
+package com.niit.collaborationPlatform.controller;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.niit.collaborationPlatform.model.Blog;
+
+public class UserController {
+
+	@GetMapping("/getAllUsers")
+	public ResponseEntity<List<Blog>> getAllBlogs()
+	{
+		List<Blog> blogs=blogDAO.list();
+		if(blogs.isEmpty())
+		{
+			blog.setErrorCode("100");
+			blog.setErrorMessage("No Blog is available yet");
+			blogs.add(blog);
+			return new ResponseEntity<List<Blog>>(blogs, HttpStatus.OK);
+		}
+		else {
+			blog.setErrorCode("200");
+			blog.setErrorMessage("Successfully fetched the list of the blogs");
+		}
+		return new ResponseEntity<List<Blog>>(blogs, HttpStatus.OK);
+	}
+	
+}

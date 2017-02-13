@@ -1,0 +1,7 @@
+127.0.0.1 - - [10/Feb/2017:16:41:09 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:16:41:21 +0530] "GET /CollaborationPlatform/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:16:41:34 +0530] "GET /CollaborationPlatform/ HTTP/1.1" 200 57
+127.0.0.1 - - [10/Feb/2017:16:43:53 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:16:49:55 +0530] "GET /CollaborationPlatform/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:16:50:15 +0530] "GET /CollaborationPlatform/getAllBlogs HTTP/1.1" 404 1060
+0:0:0:0:0:0:0:1 - - [10/Feb/2017:17:14:29 +0530] "GET /CollaborationPlatform/getAllBlogs HTTP/1.1" 404 1060

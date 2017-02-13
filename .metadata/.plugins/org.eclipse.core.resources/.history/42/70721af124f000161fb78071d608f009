@@ -1,0 +1,18 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.niit.collaborationPlatform.DAO.UserDAO;
+import com.niit.collaborationPlatform.model.User;
+
+public class UserDAOTestCase {
+
+	@Autowired
+	UserDAO userDAO;
+	
+	User user;
+
+}
