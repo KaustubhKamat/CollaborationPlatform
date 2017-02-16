@@ -2,11 +2,16 @@ package com.niit.collaborationPlatform.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.collaborationPlatform.DAO.UserDAO;
@@ -20,6 +25,9 @@ public class UserController  {
 	
 	@Autowired
 	public UserDAO userDAO;
+	
+	@Autowired
+	public HttpSession session;
 	
 
 	@GetMapping("/getAllUsers")
@@ -35,6 +43,9 @@ public class UserController  {
 		else {
 			user.setErrorCode("200");
 			user.setErrorMessage("Successfully Fetched the list of the users");
+			
+			session.setAttribute("loggedInUserId", user.getEmailId());
+			session.setAttribute("LoggedInUserRole", user.getRole());
 		}
 		
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
@@ -42,8 +53,8 @@ public class UserController  {
 	}
 	
 	
-	@GetMapping("/validate/{emailid}/{password}")
-	public ResponseEntity<User> validateCredentials(@PathVariable("emailid")String emailid, @PathVariable("password")
+	@PostMapping("/validate")
+	public ResponseEntity<User> validateCredentials(@RequestParam("emailid")String emailid, @RequestParam("password")
 	String password)
 	{
 		user=userDAO.isValidUser(emailid, password);
@@ -63,5 +74,35 @@ public class UserController  {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 		
 	}
+	
+	@PostMapping("/createNewUser/")
+	public ResponseEntity<User> createNewUser(@RequestBody User user)
+	{
+		if(userDAO.getById(user.getEmailId())==null){
+			userDAO.SaveUser(user);
+			user.setErrorCode("200");
+			user.setErrorMessage("You have successfully registered");
+		}
+		else {
+			user.setErrorCode("404");
+			user.setErrorMessage("User exists with this id :" + user.getEmailId());
+		}
+		return new ResponseEntity<User>(user, HttpStatus.OK);
+		
+	}
+	
+	/*{
+		"username" : "ali",
+		"emailid" : "ali@gmail.com",
+		"password" : "ali",
+		"role" : "admin",
+		"mobile" : "8978909787",
+		"gender" : "Male",
+		"status" : "valid",
+		"reason" : "wrong details"
+		"isonline" : "Yes"
+
+		}*/
+	
 	
 }
