@@ -1,0 +1,22 @@
+package com.niit.collaborationPlatform.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.niit.collaborationPlatform.DAO.JobDAO;
+import com.niit.collaborationPlatform.model.Job;
+import com.niit.collaborationPlatform.model.JobApplied;
+
+@RestController
+public class JobController {
+
+	@Autowired
+	public Job job;
+	
+	@Autowired
+	public JobDAO jobDAO;
+	
+	@Autowired
+	public JobApplied jobApplied;
+	
+}

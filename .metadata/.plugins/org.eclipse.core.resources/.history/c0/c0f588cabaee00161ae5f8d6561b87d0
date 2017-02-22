@@ -1,7 +1,0 @@
-package com.niit.collaborationPlatform.DAO;
-
-
-public interface JobDAO {
-
-	public 
-}

@@ -18,6 +18,8 @@ public interface JobDAO {
 	
 	public List<Job> getOpenJobs();
 	
+	public List<Job> list();
+	
 	public Integer maxID();
 	
 	

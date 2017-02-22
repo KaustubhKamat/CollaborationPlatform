@@ -88,6 +88,13 @@ public class JobDAOImpl implements JobDAO {
 		return maxID+1;
 	}
 
+	@Transactional
+	public List<Job> list() {
+		String hql="From Job";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return query.list();
+	}
+
 }
 
 

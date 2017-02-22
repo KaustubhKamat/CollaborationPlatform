@@ -1,5 +1,7 @@
 package com.niit.collaborationplatform;
 
+import javax.servlet.http.HttpSession;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class UserDAOImplTestCase {
 	static User user;
 	
 	@Autowired
+	HttpSession session;
+	
+	@Autowired
 	static AnnotationConfigApplicationContext context;
 
 	@BeforeClass
@@ -32,12 +37,12 @@ public class UserDAOImplTestCase {
 		user=(User) context.getBean("user");
 	}
 	
-	//@Test
+	@Test
 	public void SaveUserTestCase()
 	{
 		user.setEmailId("kamat@gmail.com");
 		user.setUsername("ABCD");
-		user.setPassword("abcdefg");
+		user.setPassword("123456");
 		user.setRole("User");
 		user.setMobile("809089087");
 		user.setGender("Male");
@@ -57,7 +62,7 @@ public class UserDAOImplTestCase {
 	
 	}
 	
-	@Test
+	//@Test
 	public void UpdateUserTestCase()
 	{
 		user=userDAO.getById("kaustubh235@gmail.com");

@@ -4,105 +4,123 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.collaborationPlatform.DAO.UserDAO;
 import com.niit.collaborationPlatform.model.User;
 
 @RestController
-public class UserController  {
-	
+public class UserController {
+
 	@Autowired
 	public User user;
-	
+
 	@Autowired
 	public UserDAO userDAO;
-	
+
 	@Autowired
 	public HttpSession session;
-	
 
 	@GetMapping("/getAllUsers")
-	public ResponseEntity<List<User>> getAllUsers(){
-		List<User> users=userDAO.list();
-		if(users.isEmpty())
-		{
+	public ResponseEntity<List<User>> getAllUsers() {
+		List<User> users = userDAO.list();
+		if (users.isEmpty()) {
 			user.setErrorCode("100");
 			user.setErrorMessage("No User is available yet");
 			users.add(user);
-			return new ResponseEntity<List<User>>(users, HttpStatus.OK);			
-		}
-		else {
+			return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+		} else {
 			user.setErrorCode("200");
 			user.setErrorMessage("Successfully Fetched the list of the users");
-			
+
+		
 			session.setAttribute("loggedInUserId", user.getEmailId());
-			session.setAttribute("LoggedInUserRole", user.getRole());
+			session.setAttribute("loggedInUserRole", user.getRole());
 		}
-		
+
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
-		
+
 	}
-	
-	
-	@PostMapping("/validate")
-	public ResponseEntity<User> validateCredentials(@RequestParam("emailid")String emailid, @RequestParam("password")
-	String password)
-	{
-		user=userDAO.isValidUser(emailid, password);
-		
-		if (user==null) {
-			user=new User();
+
+
+	@PostMapping("/login")
+	public ResponseEntity<User> validateCredentials(@RequestBody User user) {
+		user = userDAO.isValidUser(user.getEmailId(),user.getPassword());
+
+		if (user == null) {
+			user = new User();
 			user.setErrorCode("404");
-			user.setErrorMessage("Invalid credentials found");			
-			
+			user.setErrorMessage("Invalid credentials found");
+
 		}
-		
+
 		else {
 			user.setErrorCode("200");
 			user.setErrorMessage("Successfully logged in as a User");
 		}
-		
+
 		return new ResponseEntity<User>(user, HttpStatus.OK);
-		
+
 	}
-	
-	@PostMapping("/createNewUser/")
-	public ResponseEntity<User> createNewUser(@RequestBody User user)
-	{
-		if(userDAO.getById(user.getEmailId())==null){
-			userDAO.SaveUser(user);
+
+	@PostMapping("/createNewUser")
+	public ResponseEntity<User> createNewUser(@RequestBody User user) {
+		
+		if(userDAO.getById(user.getEmailId())==null)
+		{
+			user.setStatus("Valid user");
+			user.setReason("Reason1");
+			user.setIsOnline("Y");
+		
+		if(userDAO.SaveUser(user)==true)
+		{
 			user.setErrorCode("200");
-			user.setErrorMessage("You have successfully registered");
+			user.setErrorMessage("Registration is successful...");
 		}
 		else {
 			user.setErrorCode("404");
-			user.setErrorMessage("User exists with this id :" + user.getEmailId());
+			user.setErrorMessage("Registration is not successfully...Please try again");
 		}
-		return new ResponseEntity<User>(user, HttpStatus.OK);
+		}
+		
+		return new ResponseEntity<User>(user,HttpStatus.OK);
 		
 	}
-	
-	/*{
-		"username" : "ali",
-		"emailid" : "ali@gmail.com",
-		"password" : "ali",
-		"role" : "admin",
-		"mobile" : "8978909787",
-		"gender" : "Male",
-		"status" : "valid",
-		"reason" : "wrong details"
-		"isonline" : "Yes"
 
-		}*/
+	
+	@PutMapping("/UpdateUser")
+	public ResponseEntity<User> UpdateExistingUser(@RequestBody User user)
+	{
+		if(userDAO.UpdateUser(user))
+		{
+			user.setErrorCode("404");
+			user.setErrorMessage("Update is not successful");
+		}
+		else{
+			user.setErrorCode("202");
+			user.setErrorMessage("Update is successful");
+		}
+		return new ResponseEntity<User>(user,HttpStatus.OK);
+	}
 	
 	
+	@GetMapping("/Logout")
+	public ResponseEntity<User> Logout()
+	{
+		String loggedInUserId=(String) session.getAttribute("loggedInUserId");
+		System.out.println(loggedInUserId);
+		user.setIsOnline("N");
+		user.setIsOffline(loggedInUserId);
+		session.invalidate();
+		user.setErrorCode("200");
+		user.setErrorMessage("You have been successfully LoggedOut");
+		return new ResponseEntity<User>(user, HttpStatus.OK);
+	}
 }

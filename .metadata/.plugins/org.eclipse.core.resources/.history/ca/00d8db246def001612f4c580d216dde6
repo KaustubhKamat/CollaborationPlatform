@@ -1,9 +1,0 @@
-package com.niit.collaborationPlatform.DAO;
-
-import com.niit.collaborationPlatform.model.User;
-
-public interface UserDAO {
-
-	public SaveUser(User user);
-	
-}
