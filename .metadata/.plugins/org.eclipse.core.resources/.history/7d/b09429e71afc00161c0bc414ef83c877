@@ -1,0 +1,75 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaborationPlatform.DAO.EventDAO;
+import com.niit.collaborationPlatform.model.Event;
+
+@Repository
+public class EventDAOImpl implements EventDAO {
+
+	@Autowired
+	public EventDAO eventDAO;
+
+	@Autowired
+	public Event event;
+
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public EventDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+	public boolean SaveEvent(Event event) {
+		try {
+			sessionFactory.getCurrentSession().save(event);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
+	@Transactional
+	public boolean UpdateEvent(Event event) {
+		try {
+			sessionFactory.getCurrentSession().update(event);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+	
+	@Transactional
+	public boolean DeleteEvent(Event event) {
+		try {
+			sessionFactory.getCurrentSession().delete(event);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return false;
+	}
+
+	@Override
+	public Event getEventById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Event> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

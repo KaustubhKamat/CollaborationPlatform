@@ -1,0 +1,9 @@
+package com.niit.collaborationPlatform.DAO;
+
+
+
+public interface EventDAO {
+	
+	public boolean SaveEvent(Event )
+
+}

@@ -1,0 +1,12 @@
+package com.niit.collaborationPlatform.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.niit.collaborationPlatform.model.Event;
+
+@RestController
+public class EventController {
+
+	public Event event;
+	
+}

@@ -1,0 +1,80 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaborationPlatform.DAO.EventDAO;
+import com.niit.collaborationPlatform.model.Event;
+
+import junit.framework.Assert;
+
+public class EventDAOImplTestCase {
+
+	@Autowired
+	static Event event;
+	
+	@Autowired
+	static EventDAO eventDAO;
+	
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+	
+	
+	@BeforeClass
+	public static void init()
+	{
+		context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		eventDAO=(EventDAO) context.getBean("eventDAOImpl");
+		event=(Event) context.getBean("event");	
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void CreateEventTestCase()
+	{
+		event.setId(1);
+		event.setName("Event 1");
+		event.setVenue("Pune");
+		event.setDescription("This is Event number 1 oranised in pune");
+		Date date_time=new Date();
+		event.setDate_time(date_time);
+		Assert.assertEquals("createEventTestCase", false, eventDAO.SaveEvent(event));
+	}
+
+    @SuppressWarnings("deprecation")
+	//@Test 
+	public void DeleteChatTestCase()
+     {
+    	chat=chatDAO.getid(2);
+    	 Assert.assertEquals("DeleteChatTestCase", false, chatDAO.DeleteChat(chat));
+       
+     }
+
+    
+    @SuppressWarnings("deprecation")
+	//@Test
+    public void UpdateChatTestCase()
+    {
+   	 chat=chatDAO.getById(1);
+   	 chat.setMessage("This is second message");
+	
+    Assert.assertEquals("DeleteChatTestCase", false, chatDAO.UpdateChat(chat));
+   	 
+    }
+
+    
+    @Test
+    public void getByIDTestCase()
+    {
+    chat=chatDAO.getById(1);	
+    System.out.println(chat.getEmailid());
+    }
+}

@@ -82,8 +82,8 @@ public class JobController {
 		return new ResponseEntity<Job>(job, HttpStatus.OK);
 	}
 
-	@PostMapping("/postJob")
-	public ResponseEntity<Job> postJob(@RequestBody Job job) {
+	@PostMapping("/createNewJob")
+	public ResponseEntity<Job> createNewJob(@RequestBody Job job) {
 		job.setId(jobDAO.maxID());
 		Date date_time = new Date();
 		job.setDate_time(date_time);
