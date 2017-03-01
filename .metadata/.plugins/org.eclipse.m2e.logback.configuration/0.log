@@ -5956,3 +5956,14 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact jstl:jstl:jar
 2017-02-28 15:40:02,675 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-02-28 15:40:02,681 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-02-28 15:40:02,706 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-02-28 16:53:06,810 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @4483837ms
+2017-02-28 16:53:08,769 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.2.13.v20150730
+2017-02-28 16:53:08,880 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@441242e6{/help,null,AVAILABLE}
+2017-02-28 16:53:09,056 [Start Help Server] INFO  o.e.jetty.server.ServerConnector - Started ServerConnector@302cad94{HTTP/1.1}{127.0.0.1:56475}
+2017-02-28 16:53:09,057 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @4486084ms
+2017-02-28 17:16:33,241 [Stop Help Server] INFO  o.e.jetty.server.ServerConnector - Stopped ServerConnector@302cad94{HTTP/1.1}{127.0.0.1:0}
+2017-02-28 17:16:33,654 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@441242e6{/help,null,UNAVAILABLE}
+2017-03-01 10:19:39,081 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-01 10:19:39,163 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-01 10:19:39,168 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-01 10:19:39,170 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
