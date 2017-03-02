@@ -1,0 +1,38 @@
+app.controller('JobController', [ 'JobServices', '$http', '$rootscope',
+		'$location', '$scope',
+		function(JobServices, $http, $rootscope, $location, $scope) {
+
+			$scope.message = "Message from Job Controller"
+			console.log("Starting-->JobController")
+
+			var self = this;
+			self.job = {
+				id : '',
+				title : '',
+				qualification : '',
+				description : '',
+				status : '',
+				date_time : ''
+			}
+
+			self.jobs = [];
+			self.jobApplied = {
+				id : '',
+				username : '',
+				jobId : '',
+				date_applied : '',
+				status : ''
+			}
+			
+			var currentUser=$rootscope.currentUser;
+			
+			self.fetchAllJobs=function(){
+	        	console.log("jobController-->Starting fetchAllJobs function")
+	        
+	        	JobServices
+			
+			}
+			
+			
+
+		} ])

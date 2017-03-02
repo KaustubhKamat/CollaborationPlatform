@@ -102,7 +102,7 @@ public class JobController {
 	}
 
 	
-	@PutMapping("UpdateJob/{id}")
+	@PutMapping("UpdateJob")
 	public ResponseEntity<Job> UpdateJob(@RequestBody Job job)
 	{
 		if (jobDAO.UpdateJob(job)==false) {

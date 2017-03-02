@@ -1,0 +1,69 @@
+app.controller('JobController', [ 'JobServices', '$http', '$rootscope',
+		'$location', '$scope',
+		function(JobServices, $http, $rootscope, $location, $scope) {
+
+			$scope.message = "Message from Job Controller"
+			console.log("Starting-->JobController")
+
+			var self = this;
+			self.job = {
+				id : '',
+				title : '',
+				qualification : '',
+				description : '',
+				status : '',
+				date_time : ''
+			}
+
+			self.jobs = [];
+			self.jobApplied = {
+				id : '',
+				username : '',
+				jobId : '',
+				date_applied : '',
+				status : ''
+			}
+			
+			var currentUser=$rootscope.currentUser;
+			
+			self.fetchAllJobs=function(){
+	        	console.log("jobController-->Starting fetchAllJobs function")
+	        
+	        	JobServices.fetchAllJobs().then
+	        	(
+	        	function(Response)
+	        	{
+	        		console.log("jobController-->Ending fetchAllJobs function")
+	        		self.jobs=Response;
+	        	},
+	        	function(errResponse)
+	        	{
+	        		console.log("jobController-->Ending fetchAllJobs function")
+	        		console.log("jobController-->The jobs are not fetched successfully")
+	        	}
+	        	)
+			
+			},
+			
+			self.fetchAllOpenJobs=function(){
+	        	console.log("jobController-->Starting fetchAllOpenJobs function")
+	        
+	        	JobServices.fetchAllOpenJobs().then
+	        	(
+	        	function(Response)
+	        	{
+	        		console.log("jobController-->Ending fetchAllOpenJobs function")
+	        		self.jobs=Response;
+	        	},
+	        	function(errResponse)
+	        	{
+	        		console.log("jobController-->Ending fetchAllOpenJobs function")
+	        		console.log("jobController-->The jobs are not fetched successfully")
+	        	}
+	        	)
+			
+			},
+			
+			
+
+		} ])

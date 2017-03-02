@@ -1,7 +1,0 @@
-127.0.0.1 - - [15/Feb/2017:15:21:09 +0530] "GET / HTTP/1.1" 404 994
-0:0:0:0:0:0:0:1 - - [15/Feb/2017:15:21:15 +0530] "GET /CollaborationPlatform/ HTTP/1.1" 404 1038
-0:0:0:0:0:0:0:1 - - [15/Feb/2017:15:21:15 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
-0:0:0:0:0:0:0:1 - - [15/Feb/2017:15:21:31 +0530] "GET /CollaborationPlatform/ HTTP/1.1" 404 1038
-0:0:0:0:0:0:0:1 - - [15/Feb/2017:15:21:31 +0530] "GET /CollaborationPlatform/ HTTP/1.1" 404 1038
-0:0:0:0:0:0:0:1 - - [15/Feb/2017:15:21:37 +0530] "GET /CollaborationPlatform/getAllBlogs HTTP/1.1" 200 385
-0:0:0:0:0:0:0:1 - - [15/Feb/2017:15:25:43 +0530] "GET /CollaborationPlatform/getAllUsers HTTP/1.1" 200 243
