@@ -1,0 +1,13 @@
+app.controller('UserController',['$scope','UserServices','$location','$rootscope','$http','$cookieStore',function($scope,UserServices,$location,$http,$cookieStore{
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}])

@@ -1,0 +1,81 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>   
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+	font-family: sans-serif;
+	
+}
+
+form {
+	margin: 25px auto;
+	font-size: medium;
+	padding: 10px 20px;
+	border-radius: 10px;
+	text-align: justify;
+}
+
+body {
+	background: #f4f7f8;
+}
+
+.navbar-default {
+	background-color: #F75D59;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%--  <jsp:include page="NavBar.jsp"></jsp:include> --%>
+
+	<form class="form-horizontal" action="validate"  method="post">
+		<div class="form-group">
+			<label class="col-sm-6 control-label">SignIn</label>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-5 control-label" >Email Address</label>
+			<div class="col-sm-15">
+				<input type="text" name="id">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-5 control-label">Password</label>
+			<div class="col-sm-15">
+				<input type="password" name="Password"><br>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-5 col-sm-20">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}">
+				<button type="submit" class="btn btn-default">Login</button>
+			</div>
+		</div>
+		<hr>
+		<div class="col-sm-offset-5 col-sm-15">
+			<label class="col-sm-4control-label">New to Shopping Cart?</label>
+		</div>
+		<div class="col-sm-offset-5 col-sm-15">
+			<a href="Register"> Create Your Account</a>
+
+
+
+		</div>
+	</form>
+</body>
+</html>

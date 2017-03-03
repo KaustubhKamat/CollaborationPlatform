@@ -1,0 +1,27 @@
+app.controller('UserController', [ '$scope', 'UserServices', '$location',
+		'$rootscope', '$http', '$cookieStore',
+		function($scope, UserServices, $location, $http, $cookieStore) {
+
+			$scope.message("Message from User controller")
+			console.log("Starting UserController")
+
+			var self = this;
+
+			self.user = {
+				username : '',
+				emailId : '',
+				password : '',
+				role : '',
+				mobile : '',
+				gender : '',
+				status : '',
+				reason : '',
+				isOnline : ''
+			}
+
+			self.users=[];
+			self.friendusers=[];
+			
+			
+			
+		} ])
