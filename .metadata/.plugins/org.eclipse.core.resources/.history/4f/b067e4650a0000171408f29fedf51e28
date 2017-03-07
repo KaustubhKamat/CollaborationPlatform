@@ -1,0 +1,30 @@
+var app = angular.module('myApp', ['ngRoute','ng-cookies']);
+app.config(function($routeProvider) {
+	$routeProvider
+
+	.when('/', {
+		templateUrl : 'Home.html'
+		
+	})
+	
+	.when('/login', {
+		templateUrl : 'c_user/login.html',
+			controller : 'UserController'
+			
+		
+	})
+	.when('/Register',{
+		templateUrl :'c_user/Register.html',
+			controller : 'UserController'
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		});

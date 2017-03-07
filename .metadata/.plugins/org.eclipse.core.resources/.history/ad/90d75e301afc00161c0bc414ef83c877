@@ -1,7 +1,0 @@
-package com.niit.collaborationPlatform.DAOImpl;
-
-import com.niit.collaborationPlatform.DAO.EventDAO;
-
-public class EventDAOImpl implements EventDAO {
-
-}
