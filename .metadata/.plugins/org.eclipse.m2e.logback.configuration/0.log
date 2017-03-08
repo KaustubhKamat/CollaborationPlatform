@@ -6015,3 +6015,59 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact jstl:jstl:jar
 2017-03-07 13:36:35,159 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-03-07 13:36:35,162 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-03-07 13:36:35,163 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-07 16:14:30,658 [Worker-114] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.niit:CollaborationPlatform:0.0.1-SNAPSHOT @ D:\CollaborationPortal\CollaborationPlatform\pom.xml.
+2017-03-07 16:14:37,816 [Worker-114] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-websocket/4.3.6.RELEASE/spring-websocket-4.3.6.RELEASE.pom
+2017-03-07 16:14:38,198 [Worker-114] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-websocket/4.3.6.RELEASE/spring-websocket-4.3.6.RELEASE.pom
+2017-03-07 16:14:38,822 [Worker-114] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-websocket/4.3.6.RELEASE/spring-websocket-4.3.6.RELEASE.jar
+2017-03-07 16:14:43,497 [Worker-114] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-websocket/4.3.6.RELEASE/spring-websocket-4.3.6.RELEASE.jar
+2017-03-07 16:15:00,933 [Worker-114] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:15:00,997 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-07 16:15:00,999 [Worker-114] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:15:01,022 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-07 16:15:01,023 [Worker-114] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of CollaborationPlatform
+2017-03-07 16:15:01,024 [Worker-114] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for CollaborationPlatform
+2017-03-07 16:15:01,032 [Worker-114] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:15:09,169 [Worker-121] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:15:09,173 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-07 16:15:09,175 [Worker-121] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:15:09,175 [Worker-121] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-07 16:16:10,822 [Worker-120] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.niit:CollaborationPlatform:0.0.1-SNAPSHOT @ D:\CollaborationPortal\CollaborationPlatform\pom.xml.
+2017-03-07 16:16:11,490 [Worker-120] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-messaging/4.3.6.RELEASE/spring-messaging-4.3.6.RELEASE.pom
+2017-03-07 16:16:11,839 [Worker-120] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-messaging/4.3.6.RELEASE/spring-messaging-4.3.6.RELEASE.pom
+2017-03-07 16:16:12,293 [Worker-120] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-messaging/4.3.6.RELEASE/spring-messaging-4.3.6.RELEASE.jar
+2017-03-07 16:16:15,781 [Worker-120] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-messaging/4.3.6.RELEASE/spring-messaging-4.3.6.RELEASE.jar
+2017-03-07 16:16:18,785 [Worker-120] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:16:18,787 [Worker-120] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-07 16:16:18,790 [Worker-120] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:16:18,792 [Worker-120] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-07 16:16:18,792 [Worker-120] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of CollaborationPlatform
+2017-03-07 16:16:18,792 [Worker-120] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for CollaborationPlatform
+2017-03-07 16:16:18,799 [Worker-120] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:16:22,285 [Worker-118] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:16:22,287 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-07 16:16:22,289 [Worker-118] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:16:22,290 [Worker-118] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-07 16:19:52,968 [Worker-125] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.niit:CollaborationPlatform:0.0.1-SNAPSHOT @ D:\CollaborationPortal\CollaborationPlatform\pom.xml.
+2017-03-07 16:19:54,937 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/websocket/javax.websocket-api/1.1/javax.websocket-api-1.1.pom
+2017-03-07 16:19:55,214 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/websocket/javax.websocket-api/1.1/javax.websocket-api-1.1.pom
+2017-03-07 16:19:55,499 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/websocket/javax.websocket-all/1.1/javax.websocket-all-1.1.pom
+2017-03-07 16:19:55,827 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/websocket/javax.websocket-all/1.1/javax.websocket-all-1.1.pom
+2017-03-07 16:19:56,143 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/net/java/jvnet-parent/5/jvnet-parent-5.pom
+2017-03-07 16:19:56,438 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/net/java/jvnet-parent/5/jvnet-parent-5.pom
+2017-03-07 16:19:56,877 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/websocket/javax.websocket-api/1.1/javax.websocket-api-1.1.jar
+2017-03-07 16:19:57,590 [Worker-125] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/websocket/javax.websocket-api/1.1/javax.websocket-api-1.1.jar
+2017-03-07 16:20:01,011 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:20:01,014 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-07 16:20:01,016 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:20:01,017 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-07 16:20:01,017 [Worker-125] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of CollaborationPlatform
+2017-03-07 16:20:01,017 [Worker-125] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for CollaborationPlatform
+2017-03-07 16:20:01,024 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:20:04,832 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:20:04,833 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-07 16:20:04,835 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-07 16:20:04,835 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-08 13:45:51,273 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-08 13:45:51,324 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-03-08 13:45:51,331 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-03-08 13:45:51,333 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources

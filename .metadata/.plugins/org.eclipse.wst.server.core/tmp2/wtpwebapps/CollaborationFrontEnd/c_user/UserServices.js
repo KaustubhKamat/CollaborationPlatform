@@ -49,7 +49,7 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
              
             login: function(user){
             	console.log("Starting-->login function")
-                    return $http.put(BASE_URL+'/login',user)
+                    return $http.post(BASE_URL+'/login',user)
                             .then(
                                     function(response){
                                     	console.log("Ending-->loginUser function with success")

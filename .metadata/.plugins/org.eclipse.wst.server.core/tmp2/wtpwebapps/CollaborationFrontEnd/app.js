@@ -19,7 +19,7 @@ app.config(function($routeProvider) {
 	})
 	
 	.when('/Home', {
-		templateUrl : 'Home.html'
+		redirectTo :'/'
 		
 	})
 	

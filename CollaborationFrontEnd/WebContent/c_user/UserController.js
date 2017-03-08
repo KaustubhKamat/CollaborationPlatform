@@ -3,7 +3,8 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 		'$rootScope', '$http', '$cookieStore',
 		function($scope, UserServices, $location,$rootScope, $http, $cookieStore) {
 
-			$scope.message("Message from User controller");
+			//$scope.message("Message from User controller");\
+	$scope.message="Message from User Controller";
 			console.log("Starting UserController")
 
 			var self = this;
@@ -125,12 +126,12 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 									$rootScope.username = self.user.username
 									console.log("Logging in with Email :- "+$rootScope.currentUser.emailId)
 									$rootScope.IsLoggedIn="true"
-									if($rootScope.currentUser.role==='admin')
+									if($rootScope.currentUser.role==='Admin')
 										{
 												$rootScope.isAdmin="true"
 												console.log("UserController ==> Login as "+$rootScope.currentUser.role)
 												console.log("UserController ==> Ending createUser function()")
-												$location.path('/adminhome')
+												$location.path('/Home')
 										}
 									else
 										{
@@ -138,7 +139,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 													
 												console.log("UserController ==> Login as "+$rootScope.currentUser.role)
 												console.log("UserController ==> Ending createUser function()")
-												$location.path('/userhome')	
+												$location.path('/Home')	
 										}
 								}
 						}
