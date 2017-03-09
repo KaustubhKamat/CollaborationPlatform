@@ -18,6 +18,10 @@ app.config(function($routeProvider) {
 			controller : 'UserController'
 	})
 	
+	.when('/adminhome',{
+		templateUrl:'c_admin/adminHome.html'
+	})
+	
 	.when('/Home', {
 		redirectTo :'/'
 		

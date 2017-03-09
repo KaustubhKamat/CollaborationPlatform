@@ -6071,3 +6071,10 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact jstl:jstl:jar
 2017-03-08 13:45:51,324 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-03-08 13:45:51,331 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-03-08 13:45:51,333 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\CollaborationPortal\CollaborationPlatform\src\test\resources
+2017-03-09 10:46:32,648 [Start Help Server] INFO  org.eclipse.jetty.util.log - Logging initialized @2213449ms
+2017-03-09 10:46:33,607 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-9.2.13.v20150730
+2017-03-09 10:46:33,685 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@66954be7{/help,null,AVAILABLE}
+2017-03-09 10:46:33,776 [Start Help Server] INFO  o.e.jetty.server.ServerConnector - Started ServerConnector@54d016bb{HTTP/1.1}{127.0.0.1:62482}
+2017-03-09 10:46:33,777 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started @2214581ms
+2017-03-09 12:45:52,131 [Stop Help Server] INFO  o.e.jetty.server.ServerConnector - Stopped ServerConnector@54d016bb{HTTP/1.1}{127.0.0.1:0}
+2017-03-09 12:45:52,236 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@66954be7{/help,null,UNAVAILABLE}

@@ -47,7 +47,7 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
             },
        
              
-            login: function(user){
+            authenticate: function(user){
             	console.log("Starting-->login function")
                     return $http.post(BASE_URL+'/login',user)
                             .then(

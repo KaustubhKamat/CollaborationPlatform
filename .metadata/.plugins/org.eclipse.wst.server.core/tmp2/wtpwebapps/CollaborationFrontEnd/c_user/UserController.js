@@ -3,13 +3,13 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 		'$rootScope', '$http', '$cookieStore',
 		function($scope, UserServices, $location,$rootScope, $http, $cookieStore) {
 
-			//$scope.message("Message from User controller");\
+			//$scope.message("Message from User controller");
 	$scope.message="Message from User Controller";
 			console.log("Starting UserController")
 
 			var self = this;
 
-			self.user = {
+			this.user = {
 				username : '',
 				emailId : '',
 				password : '',
@@ -23,7 +23,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				errorMessage:''
 			}
 
-			self.users=[];
+			this.users=[];
 			self.friendusers=[];
 			
 			self.fetchAllUsers=function(){
@@ -72,7 +72,6 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				console.log("UserController ==> Starting submit user function()")
 
 				self.createNewUser(self.user);
-				self.reset();
 				console.log("UserController ==> Ending submit function()")
 
 		};
@@ -103,10 +102,10 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				}
 				},
 			
-			self.login = function(user)
+			self.authenticate = function(user)
 			{
-				console.log("UserController ==> Starting createUser function()")
-				UserServices.login(user).then
+				console.log("UserController ==> Starting authenticate function()")
+				UserServices.authenticate(user).then
 				(
 						function(d)
 						{
@@ -116,14 +115,14 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 									alert(self.user.errorMessage)
 									self.emailId=''
 									self.password=''
-										console.log("UserController ==> Ending createUser function()")
+										console.log("UserController ==> Ending authenticate function()")
 									
 								}
 							else
 								{
 									$rootScope.currentUser = self.user
 									$cookieStore.put("currentUser",self.user)
-									$rootScope.username = self.user.username
+									$rootScope.emailId = self.user.emailId
 									console.log("Logging in with Email :- "+$rootScope.currentUser.emailId)
 									$rootScope.IsLoggedIn="true"
 									if($rootScope.currentUser.role==='Admin')
@@ -131,14 +130,12 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 												$rootScope.isAdmin="true"
 												console.log("UserController ==> Login as "+$rootScope.currentUser.role)
 												console.log("UserController ==> Ending createUser function()")
-												$location.path('/Home')
+												$location.path('/adminhome')
 										}
 									else
 										{
-												$rootScope.showProfile="true"
-													
 												console.log("UserController ==> Login as "+$rootScope.currentUser.role)
-												console.log("UserController ==> Ending createUser function()")
+												console.log("UserController ==> Ending authenticate function()")
 												$location.path('/Home')	
 										}
 								}
@@ -146,6 +143,15 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				)
 }
 
+				self.login=function(){
+					{
+					console.log("Login validation started", self.user)
+					self.authenticate(self.user);
+					console.log("Login validation ended")
+				}
+				};
+				
+				
 			self.logoutUser=function(){
 				$rootscope.currentUser={}
 				$rootscope.isAdmin="false"

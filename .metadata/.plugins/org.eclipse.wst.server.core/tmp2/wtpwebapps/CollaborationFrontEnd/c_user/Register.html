@@ -10,7 +10,6 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
 
@@ -91,7 +90,7 @@ h2 {
   
   <div class="form-group" ng-class="{'has-error' : form.password.$dirty && form.password.$error.required}">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="password" class="form-control" placeholder="Password" ng-model="ctrl.user.password" id="password" name="password" required>
+      <input type="password" class="form-control" placeholder="Password" ng-model="ctrl.user.password" id="password" name="password" required ng-minlength="5">
        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password field cannot be left blank</span>
     </div>
   </div>
