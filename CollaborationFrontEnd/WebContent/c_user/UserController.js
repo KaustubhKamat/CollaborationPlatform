@@ -9,7 +9,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 
 			var self = this;
 
-			this.user = {
+			self.user = {
 				username : '',
 				emailId : '',
 				password : '',
@@ -23,7 +23,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				errorMessage:''
 			}
 
-			this.users=[];
+			self.users=[];
 			self.friendusers=[];
 			
 			self.fetchAllUsers=function(){
@@ -34,12 +34,12 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 	        	function(d)
 	        	{
 	        		console.log("UserController-->Ending fetchAllUsers function")
-	        		self.jobs=d;
+	        		self.users=d;
 	        	},
 	        	function(errResponse)
 	        	{
-	        		console.log("UserController-->Ending fetchAllJobs function")
-	        		console.log("UserController-->The jobs are not fetched successfully")
+	        		console.log("UserController-->Ending fetchAllUsers function")
+	        		console.log("UserController-->The users are not fetched successfully")
 	        	}
 	        	)
 			
@@ -102,6 +102,8 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				}
 				},
 			
+				
+				//to authenticate 
 			self.authenticate = function(user)
 			{
 				console.log("UserController ==> Starting authenticate function()")
@@ -136,13 +138,14 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 										{
 												console.log("UserController ==> Login as "+$rootScope.currentUser.role)
 												console.log("UserController ==> Ending authenticate function()")
-												$location.path('/Home')	
+												$location.path('/userHome')	
 										}
 								}
 						}
 				)
 }
-
+				
+				//login function called
 				self.login=function(){
 					{
 					console.log("Login validation started", self.user)
@@ -152,6 +155,23 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				};
 				
 				
+				self.myProfile=function(){
+					UserServices.myProfile().then
+					(
+							function(d)
+							{
+								self.user=d;
+								console.log("Successfully fetched the profile of the user: " +$rootScope.currentUser.username)
+							},
+							function(errResponse)
+							{
+								console.error("Error While Fetching Profile,.,..,.")
+							}
+)
+				}
+				
+				
+			//logout function	
 			self.logoutUser=function(){
 				$rootscope.currentUser={}
 				$rootscope.isAdmin="false"
@@ -163,12 +183,26 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 							$rootscope.IsLoggedIn="false"
 								self.user = d;
 							alert(self.user.errorMessage)
-                            $location.path('/login')
+                            $location.path('/c_common/Home')
 						}
 						
 				)
 			}
 			
+			//login function called
+			self.logoutUser=function(){
+				{
+				console.log("Logged out function started", self.user)
+				self.logoutUser();
+				console.log("Successfully Loggedout ")
+			}
+			};
+			
+			
+			self.fetchAllUsers();
+			
+			
+			//Reset function
 			self.reset = function(){
 				self.user = {
 						username : '',

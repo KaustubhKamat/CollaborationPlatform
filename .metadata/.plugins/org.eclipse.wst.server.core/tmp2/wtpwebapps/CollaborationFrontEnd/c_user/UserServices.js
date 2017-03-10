@@ -64,7 +64,7 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
              
             logoutUser: function(){
             	console.log("Starting-->logout function")
-                    return $http.put(BASE_URL+'/')
+                    return $http.put(BASE_URL+'/Logout')
                             .then(
                                     function(response){
                                     	console.log("Ending-->loginUser function with success")
@@ -75,6 +75,17 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
             },
             
      
+            myProfile: function(){
+            	console.log("Starting==> My profile function")
+            	return $http.get(BASE_URL+'/showMyProfile')
+            	.then(
+            			function(response){
+            				console.log("Ending==> My profile function")
+            				return response.data;
+            			}
+            			)
+            };
+            
     }
     
             
