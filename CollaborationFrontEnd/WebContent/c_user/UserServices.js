@@ -20,7 +20,7 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
             
             createNewUser: function(user){
             	console.log("Starting-->CreateNewUser function")
-            	return $http.post(BASE_URL+'/createNewUser').then(
+            	return $http.post(BASE_URL+'/createNewUser', user).then(
             	function(Response){
             		console.log("Ending-->CreateNewUser Function")
             		return Response.data;
@@ -84,7 +84,7 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
             				return response.data;
             			}
             			)
-            };
+            }
             
     }
     

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.niit.collaborationPlatform.DAO.UserDAO;
 import com.niit.collaborationPlatform.model.User;
 
+import ch.qos.logback.classic.Logger;
+
 @RestController
 public class UserController {
 
@@ -27,6 +30,7 @@ public class UserController {
 
 	@Autowired
 	public HttpSession session;
+	
 
 	@GetMapping("/getAllUsers")
 	public ResponseEntity<List<User>> getAllUsers() {
@@ -40,7 +44,6 @@ public class UserController {
 			user.setErrorCode("200");
 			user.setErrorMessage("Successfully Fetched the list of the users");
 
-		
 			session.setAttribute("loggedInUserId", user.getEmailId());
 			session.setAttribute("loggedInUserRole", user.getRole());
 		}
@@ -49,10 +52,9 @@ public class UserController {
 
 	}
 
-
 	@PostMapping("/login")
 	public ResponseEntity<User> validateCredentials(@RequestBody User user) {
-		user = userDAO.isValidUser(user.getEmailId(),user.getPassword());
+		user = userDAO.isValidUser(user.getEmailId(), user.getPassword());
 
 		if (user == null) {
 			user = new User();
@@ -72,49 +74,54 @@ public class UserController {
 
 	@PostMapping("/createNewUser")
 	public ResponseEntity<User> createNewUser(@RequestBody User user) {
-		
-		if(userDAO.getById(user.getEmailId())==null)
-		{
+
+		if (userDAO.getById(user.getEmailId()) == null) {
 			user.setStatus("Valid user");
 			user.setReason("Reason1");
 			user.setIsOnline("Y");
-		
-		if(userDAO.SaveUser(user)==true)
-		{
-			user.setErrorCode("200");
-			user.setErrorMessage("Registration is successful...");
+
+			if (userDAO.SaveUser(user) == true) {
+				user.setErrorCode("200");
+				user.setErrorMessage("Registration is successful...");
+			} else {
+				user.setErrorCode("404");
+				user.setErrorMessage("Registration is not successfully...Please try again");
+			}
 		}
-		else {
-			user.setErrorCode("404");
-			user.setErrorMessage("Registration is not successfully...Please try again");
-		}
-		}
-		
-		return new ResponseEntity<User>(user,HttpStatus.OK);
-		
+
+		return new ResponseEntity<User>(user, HttpStatus.OK);
+
 	}
 
-	
 	@PutMapping("/UpdateUser")
-	public ResponseEntity<User> UpdateExistingUser(@RequestBody User user)
-	{
-		if(userDAO.UpdateUser(user))
-		{
+	public ResponseEntity<User> UpdateExistingUser(@RequestBody User user) {
+		if (userDAO.UpdateUser(user)) {
 			user.setErrorCode("404");
 			user.setErrorMessage("Update is not successful");
-		}
-		else{
+		} else {
 			user.setErrorCode("202");
 			user.setErrorMessage("Update is successful");
 		}
-		return new ResponseEntity<User>(user,HttpStatus.OK);
+		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
-	
-	
+
+	@GetMapping("/showMyProfile")
+	public ResponseEntity<User> myProfile(){
+	 String loggedInUserId= (String) session.getAttribute("loggedInUserId");
+	 User user=userDAO.getById(loggedInUserId);
+	 if(user==null){
+		 user=new User();
+		 user.setErrorCode("404");
+		 user.setErrorMessage("User does not exists");
+		 return new ResponseEntity<User>(user, HttpStatus.NOT_FOUND);
+	 }
+	return new ResponseEntity<User>(user, HttpStatus.OK);
+	 
+	}
+
 	@GetMapping("/Logout")
-	public ResponseEntity<User> Logout()
-	{
-		String loggedInUserId=(String) session.getAttribute("loggedInUserId");
+	public ResponseEntity<User> Logout() {
+		String loggedInUserId = (String) session.getAttribute("loggedInUserId");
 		System.out.println(loggedInUserId);
 		user.setIsOnline("N");
 		user.setIsOffline(loggedInUserId);

@@ -14,8 +14,8 @@ h2 {
 }
 
 h4 {
-	text-align: center;
 	font-family: cursive;
+	text-align: center;
 }
 
 
@@ -26,6 +26,14 @@ h3 {
 a {
 	color: black;
 }
+body {
+	background: linear-gradient(orange, lightblue);
+}
+
+div {
+	word-spacing: 5px;
+}
+
 </style>
 
 </head>
@@ -38,10 +46,19 @@ a {
 <a href="#" ng-click="ctrl.myprofile()"> My Profile</a>
 </div> -->
 
+<div class="container">
+<div ng-show="currentUser.emailId">
+<div class="nav navbar-nav navbar-right">
+<h3>Welcome {{currentUser.username}}  &nbsp&nbsp<a href="#" ng-click="ctrl.logoutUser()"> Logout</a>  &nbsp  &nbsp<a href="#/myProfile">My profile</a></h3>
+</div>
+</div>
+</div>
 
-<div class="container-fluid">
-<div class="nav navbar-nav navbar-left"></div>
+<div class="container">
+<div ng-hide="currentUser.emailId">
+<div class="nav navbar-nav navbar-right"></div>
 <h3><a class="bg-danger" href="#/login">Login</a></h3>
+</div>
 </div>
 </div>
 

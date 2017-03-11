@@ -47,7 +47,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 			
 			
 			
-			self.createNewUser=function(){
+			self.createNewUser=function(user){
 				console.log("UserController-->Starting CreateNewUser function")
 				
 				UserServices.createNewUser(user).then(
@@ -171,6 +171,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				}
 				
 				
+				
 			//logout function	
 			self.logoutUser=function(){
 				$rootscope.currentUser={}
@@ -183,7 +184,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 							$rootscope.IsLoggedIn="false"
 								self.user = d;
 							alert(self.user.errorMessage)
-                            $location.path('/c_common/Home')
+                            $location.path('/')
 						}
 						
 				)
