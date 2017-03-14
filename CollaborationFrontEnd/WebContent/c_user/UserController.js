@@ -136,7 +136,8 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 										}
 									else
 										{
-												console.log("UserController ==> Login as "+$rootScope.currentUser.role)
+										        $rootScope.showProfile='true'
+										        console.log("UserController ==> Login as "+$rootScope.currentUser.role)
 												console.log("UserController ==> Ending authenticate function()")
 												$location.path('/userHome')	
 										}

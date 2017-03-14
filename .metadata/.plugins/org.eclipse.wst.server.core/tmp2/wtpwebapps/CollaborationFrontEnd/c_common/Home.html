@@ -49,7 +49,7 @@ div {
 <div class="container">
 <div ng-show="currentUser.emailId">
 <div class="nav navbar-nav navbar-right">
-<h3>Welcome {{currentUser.username}}  &nbsp&nbsp<a href="#" ng-click="ctrl.logoutUser()"> Logout</a>  &nbsp  &nbsp<a href="#/myProfile">My profile</a></h3>
+<h3>Welcome {{currentUser.username}}  &nbsp&nbsp<a href="#" ng-click="ctrl.logoutUser()"class="btn btn-warning" style="color: black"> Logout</a>  &nbsp  &nbsp<a href="#/myProfile" class="btn btn-warning" style="color: black">My profile</a></h3>
 </div>
 </div>
 </div>
@@ -57,7 +57,7 @@ div {
 <div class="container">
 <div ng-hide="currentUser.emailId">
 <div class="nav navbar-nav navbar-right"></div>
-<h3><a class="bg-danger" href="#/login">Login</a></h3>
+<h3><a class="btn btn-warning" href="#/login" style="color: black;">Login</a></h3>
 </div>
 </div>
 </div>

@@ -20,10 +20,10 @@ app.service('BlogServices', ['$http','$q', '$rootScope', function($http,$q,$root
          
             
             SaveNewBlog: function(blog){
-            	console.log("Starting-->SaveNewJob function")
-            	return $http.post(BASE_URL+'/SaveNewBlog').then(
+            	console.log("Starting-->SaveNewBlog function")
+            	return $http.post(BASE_URL+'/SaveNewBlog',blog).then(
             	function(Response){
-            		console.log("Ending-->SaveNewJob Function")
+            		console.log("Ending-->SaveNewBlog Function")
             		return Response.data;
             	},
             	function(errResponse){

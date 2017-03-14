@@ -49,6 +49,12 @@ app.config(function($routeProvider) {
 		
 	})
 	
+	//blog related mapping
+	.when('/CreateBlog', {
+		templateUrl : 'c_blog/CreateBlog.html',
+		controller :'BlogController'
+		
+	})
 	
 	
 	

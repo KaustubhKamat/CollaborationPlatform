@@ -1,6 +1,8 @@
-app.controller('BlogController', [ 'BlogServices', '$http', '$rootscope',
+'use strict';
+
+app.controller('BlogController', ['BlogServices', '$http', '$rootScope',
 		'$location', '$scope',
-		function(BlogServices, $http, $rootscope, $location, $scope) {
+		function(BlogServices, $http, $rootScope, $location, $scope) {
 
 			$scope.message = "Message from Blog Controller"
 			console.log("Starting-->BlogController")
@@ -19,7 +21,7 @@ app.controller('BlogController', [ 'BlogServices', '$http', '$rootscope',
 			self.blogs = [];
 			
 			
-			var currentUser=$rootscope.currentUser;
+			var currentUser=$rootScope.currentUser;
 			
 			//to get all the blogs
 			self.fetchAllBlogs=function(){
@@ -63,22 +65,22 @@ app.controller('BlogController', [ 'BlogServices', '$http', '$rootscope',
 			
 			
 			//to create new blog
-			self.SaveNewBlog=function(){
+			self.SaveNewBlog=function(blog){
 				console.log("BlogController-->Starting SaveNewJob function")
 				
 				BlogServices.SaveNewBlog(blog).then(
 				function(d)
 				{
-					console.log("BlogController-->Ending CreateNewJob function")
+					console.log("BlogController-->Ending SaveNewBlog function")
 					alert("The Blog is posted successfully")
 				},
 				
 				function(errResponse)
 				{
 					alert("The Blog was not posted. Please try again after sometime")
-					console.log("jobController ==> Ending createNewJob function()")
+					console.log("jobController ==> Ending SaveNewJob function()")
 
-					console.log("Error while posting job,, please try again after sometime")
+					console.log("Error while posting blog, please try again after sometime")
 				}
 				)
 				
@@ -86,16 +88,27 @@ app.controller('BlogController', [ 'BlogServices', '$http', '$rootscope',
 			
 			self.submit =function()
 			{
-				console.log("BlogController ==> Starting submit function()")
+				console.log("BlogController ==> Starting blog submit function()")
 
 				self.SaveNewBlog(self.blog);
 				self.reset();
-				console.log("BlogController ==> Ending submit function()")
+				console.log("BlogController ==> Ending blog submit function()")
 
 		};
 			
+		self.fetchAllBlogs();
+		
+		self.reset=function()
+		{
+			self.blog ={
+					
+					title : '',
+					description : ''
+					
+			}
+		};
+		
 			
 
-		} ])/**
- * 
- */
+		} ])
+ 

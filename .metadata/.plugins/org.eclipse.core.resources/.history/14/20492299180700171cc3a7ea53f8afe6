@@ -1,0 +1,129 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<head>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+	font-family: sans-serif;
+	
+}
+
+form {
+	margin: 25px auto;
+	font-size: medium;
+	padding: 10px 20px;
+	border-radius: 10px;
+	text-align: justify;
+}
+
+body {
+	background: linear-gradient(orange, lightblue);
+}
+
+h2 {
+	text-align: center;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<body ng-app="">
+
+
+	
+<div ng-controller="BlogController as ctrl">
+	
+
+
+<form name="form" ng-submit="ctrl.submit()" class="form-horizontal" role="form">
+		<div class="form-group" ng-class="{'has-error' : form.id.$dirty && form.id.$error.required}">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="text" class="form-control" placeholder="Blog Title" ng-model="ctrl.blog.title" id="" name="title" required>
+      <span ng-show="form.title.$dirty && form.title.$error.required" class="help-block">Title field cannot be left blank</span>
+    </div>
+  </div>
+  
+   <div class="form-group" ng-class="{'has-error' : form.description.$dirty && form.description.$error.required}">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="email" class="form-control" placeholder="Description" ng-model="ctrl.user.emailId" id="emailId" name="emailId" required>
+      <span ng-show="form.emailId.$dirty && form.emailId.$error.required" class="help-block">EmailId field cannot be left blank</span>
+    </div>
+  </div>
+  
+  <div class="form-group" ng-class="{'has-error' : form.mobile.$dirty && form.mobile.$error.required}">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="text" class="form-control" placeholder="Mobile" ng-model="ctrl.user.mobile" id="mobile" name="mobile" required>
+       <span ng-show="form.mobile.$dirty && form.mobile.$error.required" class="help-block">Mobile field cannot be left blank </span>
+    </div>
+  </div>
+  
+  <div class="form-group" ng-class="{'has-error' : form.password.$dirty && form.password.$error.required}">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="password" class="form-control" placeholder="Password" ng-model="ctrl.user.password" id="password" name="password" required ng-minlength="5">
+       <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password field cannot be left blank</span>
+    </div>
+  </div>
+  
+  <div class="form-group" ng-class="{'has-error' : form.gender.$dirty && form.gender.$error.required}">
+   <div class="col-sm-offset-2 col-sm-10">
+    <label class="radio-inline">
+     <h5> <input type="radio" name="gender" ng-model="ctrl.user.gender" id="gender" ng-value="'Male'">Male</h5>
+    </label>
+    <label class="radio-inline">
+   <h5>   <input type="radio" name="gender" ng-model="ctrl.user.gender" id="gender" ng-value="'Female'">Female</h5>
+    </label>
+          <span ng-show="form.gender.$dirty && form.gender.$error.required" class="help-block">Gender field cannot be left blank</span>
+    
+</div>
+  
+  <div class="form-group" ng-class="{'has-error' : form.role.$dirty && form.role.$error.required}">
+   <div class="col-sm-offset-2 col-sm-10">
+  <label class="radio-inline">
+     <h5> <input type="radio" name="role" ng-model="ctrl.user.role" ng-value="'Employee'"  id="role">Employee</h5>
+    </label>
+    <label class="radio-inline">
+   <h5>   <input type="radio" name="role" ng-model="ctrl.user.role" ng-value="'Alumini'" id="role">Alumini</h5>
+    </label>
+    <label class="radio-inline">
+    <h5>  <input type="radio" name="role" ng-model="ctrl.user.role" ng-value="'Student'" id="role">Student</h5>
+    </label>
+    <span ng-show="form.role.$dirty && form.role.$error.required" class="help-block">Role field cannot be left blanks</span>
+</div> 
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Register</button>	
+		</div>
+
+		</div>
+	</form>
+	</div>
+</td>
+ 
+ 
+
+ </body>
+ </html>
+
+
+
