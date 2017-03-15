@@ -85,7 +85,7 @@ public class BlogController {
 			return blog;
 		}
 
-		//blog.setId(blogDAO.maxID());
+		blog.setId(blogDAO.maxID());
 		Date date_time=new Date();
 		blog.setDate_time(date_time);
 		blog.setStatus("Not Approved");

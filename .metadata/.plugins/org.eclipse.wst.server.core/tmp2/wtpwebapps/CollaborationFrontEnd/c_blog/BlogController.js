@@ -102,6 +102,7 @@ app.controller('BlogController', ['BlogServices', '$http', '$rootScope',
 		{
 			self.blog ={
 					
+					id:'',
 					title : '',
 					description : ''
 					

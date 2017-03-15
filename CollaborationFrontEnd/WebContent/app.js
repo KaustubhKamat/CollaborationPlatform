@@ -56,9 +56,25 @@ app.config(function($routeProvider) {
 		
 	})
 	
+	.when('/AllBlogs', {
+		templateUrl : 'c_blog/AllBlogs.html',
+		controller :'BlogController'
+		
+	})
 	
 	
+	//event related mapping
+	.when('/CreateEvent', {
+		templateUrl : 'c_event/CreateEvent.html',
+		controller :'EventController'
+		
+	})
 	
+	.when('/AllEvents', {
+		templateUrl : 'c_event/AllEvents.html',
+		controller :'EventController'
+		
+	})
 	
 	
 	
