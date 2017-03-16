@@ -43,6 +43,8 @@ app.controller('BlogController', ['BlogServices', '$http', '$rootScope',
 			
 			},
 			
+			
+			
 			//to get blog with id
 			self.blogById=function(){
 	        	console.log("BlogController-->Starting blogById function")
@@ -62,6 +64,8 @@ app.controller('BlogController', ['BlogServices', '$http', '$rootScope',
 	        	)
 			
 			},
+			
+			
 			
 			
 			//to create new blog

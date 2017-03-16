@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="RegExp"/>
-<fullyQualifiedTypeName name="Function"/>
 <fullyQualifiedTypeName name="Text"/>
+<fullyQualifiedTypeName name="TypeError"/>
+<fullyQualifiedTypeName name="Function"/>
 </qualifiedTypeNameHistroy>

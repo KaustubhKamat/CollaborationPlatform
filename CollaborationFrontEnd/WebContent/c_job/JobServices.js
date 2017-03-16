@@ -42,7 +42,7 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	)       	
             },
             
-            jobById: function(){
+            jobById: function(id){
             	console.log("Starting--> jobById Function")
             	return $http.get(BASE_URL+'/getJobById' +id).then(
             			function(Response){
@@ -70,6 +70,25 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	)
             },
        
+            
+            applyForJob: function(jobID) {
+            	console.log("Starting applyForJob function")
+            	return $http.post(BASE_URL+'/applyForJob',jobID ).then(
+            	function(Response){
+            		console.log("Ending applyForJob function")
+            		return Response.data;
+            	},		
+            	
+            	function(errResponse){
+            		console.log("Ending applyForJob function with errors")
+            		return $q.reject(errResponse);
+            	}
+            	)
+            	
+            },
+				
+			
+            
              
             rejectJobApplication: function(userID, jobID){
                     return $http.put(BASE_URL+'/rejectJobApplication/'+userID+ "/" + jobID)
@@ -97,6 +116,7 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
                             )
             },
             
+           
      
     }
     

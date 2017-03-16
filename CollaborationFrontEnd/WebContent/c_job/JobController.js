@@ -1,6 +1,6 @@
-app.controller('JobController', [ 'JobServices', '$http', '$rootscope',
+app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 		'$location', '$scope',
-		function(JobServices, $http, $rootscope, $location, $scope) {
+		function(JobServices, $http, $rootScope, $location, $scope) {
 
 			$scope.message = "Message from Job Controller"
 			console.log("Starting-->JobController")
@@ -24,16 +24,16 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootscope',
 				status : ''
 			}
 			
-			var currentUser=$rootscope.currentUser;
+			var currentUser=$rootScope.currentUser;
 			
 			self.fetchAllJobs=function(){
-	        	console.log("jobController-->Starting fetchAllJobs function")
+	        	console.log("JobController-->Starting fetchAllJobs function")
 	        
 	        	JobServices.fetchAllJobs().then
 	        	(
 	        	function(Response)
 	        	{
-	        		console.log("jobController-->Ending fetchAllJobs function")
+	        		console.log("JobController-->Ending fetchAllJobs function")
 	        		self.jobs=Response;
 	        	},
 	        	function(errResponse)
@@ -64,7 +64,7 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootscope',
 			
 			},
 			
-			self.jobById=function(){
+			self.jobById=function(id){
 	        	console.log("jobController-->Starting jobById function")
 	        
 	        	JobServices.jobById(id).then
@@ -133,5 +133,36 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootscope',
 				)
 				
 			};
+			
+			
+			self.applyForJob = applyForJob
+			
+			
+			function applyForJob(jobID)
+			{
+				console.log("JobController--> Starting applyForJob function")
+	            var currentUser=$rootScope.currentUser;
+				console.log("Logged in with id " +$rootScope.currentUser)
+				
+				if(typeof currentUser.emailId == 'undefined')
+					{
+					alert("Please Login to continue")
+					console.log("User has not logged in. So cannot apply")
+					return;
+					}
+				JobServices.applyForJob(jobID).then(
+				function(d){
+					alert("Applied the Job successfully")
+					console.log("JobController==> Ending applyForJob function with success")
+				},
+			    function(errResponse)
+			    {
+					console.log("JobController==> Ending applyforJob function with errors ")
+					console.log("JobController==> Ending applyForJob function with errors")
+			    }
+				)
+					
+			}
 
+			self.fetchAllJobs();
 		} ])

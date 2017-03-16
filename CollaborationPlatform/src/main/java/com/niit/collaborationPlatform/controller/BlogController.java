@@ -115,8 +115,8 @@ public class BlogController {
 			blog.setErrorMessage("Please Login to approve the blog");
 		}
 
-		/*
-		 * if(session.getAttribute("LoggedInUserRole")).equals("Admin") {
+		
+		 /** if(session.getAttribute("LoggedInUserRole")).equals("Admin") {
 		 * blog.setErrorCode("404"); blog.setErrorMessage(
 		 * "Please Login to approve the blog"); }
 		 */
@@ -154,7 +154,6 @@ public class BlogController {
 	
 	
 	
-		/*"title" : "Java Blog",
-		"description" : "This blog contains complete information about core java concepts"*/
+		
 	
 }

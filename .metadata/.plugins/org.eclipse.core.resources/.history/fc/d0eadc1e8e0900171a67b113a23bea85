@@ -1,0 +1,62 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaborationPlatform.DAO.JobApplicationDAO;
+import com.niit.collaborationPlatform.model.JobApplication;
+
+public class JobApplicationDAOImpl implements JobApplicationDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public JobApplicationDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory=sessionFactory;
+	}
+	
+	@Transactional
+	public JobApplication getJobApplication(String id) {
+		return (JobApplication) sessionFactory.getCurrentSession().get(JobApplication.class, id);
+	}
+
+	@Override
+	public JobApplication getJobApplication(String emailId, String JobId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<JobApplication> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean SaveJobApplication(JobApplication jobApplied) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean DeleteJobApplication(JobApplication jobApplied) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean UpdateJobApplication(JobApplication jobApplied) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<JobApplication> list(String emailId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
