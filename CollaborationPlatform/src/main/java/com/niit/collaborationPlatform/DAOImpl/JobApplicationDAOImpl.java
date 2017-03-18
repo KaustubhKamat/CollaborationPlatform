@@ -27,8 +27,8 @@ public class JobApplicationDAOImpl implements JobApplicationDAO {
 	}
 
 	@Transactional
-	public JobApplication getJobApplication(String username, String JobId) {
-		String hql = "FROM JobApplication where username='"+username+"' and JobId = '"+JobId+"'";
+	public JobApplication getJobApplication(String username, String jobId) {
+		String hql = "FROM JobApplication where username='"+username+"' and JobId = '"+jobId+"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return (JobApplication) query.list();
 	}
@@ -77,5 +77,21 @@ public class JobApplicationDAOImpl implements JobApplicationDAO {
 		Query query=sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
 	}
+
+	@Transactional
+	public Integer maxID()
+	{
+		Integer maxId = 100;
+		try {
+			String hql = "Select max(id) from JobApplication";
+			Query query = sessionFactory.getCurrentSession().createQuery(hql);
+			maxId= (Integer) query.uniqueResult();
+		} catch (Exception e) {
+			maxId= 100;
+			e.printStackTrace();
+		}
+		return maxId+1;
+	}
+
 
 }

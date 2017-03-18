@@ -48,14 +48,6 @@ public class JobApplication extends BaseDomain {
 		this.date_applied = date_applied;
 	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getRemarks() {
 		return remarks;
 	}
@@ -70,8 +62,16 @@ public class JobApplication extends BaseDomain {
 	
 	public Date date_applied;
 	
-	public String status;
+	public char status;
 	
+	public char getStatus() {
+		return status;
+	}
+
+	public void setStatus(char status) {
+		this.status = status;
+	}
+
 	public String remarks;
 
 }

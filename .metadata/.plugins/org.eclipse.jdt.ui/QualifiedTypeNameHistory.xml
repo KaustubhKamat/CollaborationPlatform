@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.orm.hibernate4.HibernateTransactionManager"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="org.hibernate.event.spi.SaveOrUpdateEvent"/>
 <fullyQualifiedTypeName name="com.niit.collaborationplatform.ChatDAOImplTestCase"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.Chat"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAO.ChatDAO"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAOImpl.JobDAOImpl"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAO.BlogDAO"/>
 <fullyQualifiedTypeName name="javax.transaction.TransactionScoped"/>
 <fullyQualifiedTypeName name="javax.persistence.Transient"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAO.UserDAO"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.Blog"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
@@ -30,7 +27,6 @@
 <fullyQualifiedTypeName name="antlr.debug.Event"/>
 <fullyQualifiedTypeName name="oracle.net.aso.b"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAO.EventDAO"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
@@ -38,26 +34,30 @@
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.User"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.BaseDomain"/>
-<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
-<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
 <fullyQualifiedTypeName name="ch.qos.logback.classic.Logger"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.Log_.logger"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.common.util.impl.LoggerFactory"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.hibernate.Query"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAO.JobApplicationDAO"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
 <fullyQualifiedTypeName name="org.junit.BeforeClass"/>
-<fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.JobApplication"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.JobApplication"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

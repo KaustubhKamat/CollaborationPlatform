@@ -8,7 +8,7 @@ public interface JobApplicationDAO {
 
 	public JobApplication getJobApplication(int id);
 	
-	public JobApplication getJobApplication(String emailId, String JobId);
+	public JobApplication getJobApplication(String username, String jobId);
 	
 	public List<JobApplication> list();
 	
@@ -20,4 +20,5 @@ public interface JobApplicationDAO {
 	
 	public List<JobApplication> myAppliedJob(String username);
 	
+	public Integer maxID();
 }

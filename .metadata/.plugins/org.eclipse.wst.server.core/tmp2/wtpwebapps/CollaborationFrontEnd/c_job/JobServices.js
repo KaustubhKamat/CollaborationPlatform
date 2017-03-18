@@ -71,9 +71,9 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             },
        
             
-            applyForJob: function(jobID) {
+            applyForJob: function(jobId) {
             	console.log("Starting applyForJob function")
-            	return $http.post(BASE_URL+'/applyForJob',jobID ).then(
+            	return $http.post(BASE_URL+'/applyForJob/',jobId ).then(
             	function(Response){
             		console.log("Ending applyForJob function")
             		return Response.data;
@@ -86,41 +86,73 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	)
             	
             },
+            
+            selectJobApplication: function(username, jobId, reason) {
+				console.log("Starting selectJobApplication function")
+				return $http.put(BASE_URL+'/selectedJobApplication/'+username +'/'+jobId + '/' + reason).then(
 				
-			
-            
-             
-            rejectJobApplication: function(userID, jobID){
-                    return $http.put(BASE_URL+'/rejectJobApplication/'+userID+ "/" + jobID)
+						function(Response)
+						{
+							console.log("Ending selectJobApplication function with success")
+							return Response.data
+						},
+						function(errResponse)
+						{
+							console.log("Ending selectJobApplication function with error")
+							return $q.reject(errResponse);
+						}
+						
+				)
+			},
+				
+            rejectJobApplication: function(username, jobId, reason){
+                return $http.put(BASE_URL+'/rejectJobApplication/' +username +'/'+jobId + '/' + reason)
+                        .then(
+                                function(response){
+                                	console.log("Successfully called rejected the job application")
+                                    return response.data;
+                                }, 
+                                function(errResponse){
+                                    console.log("Error while rejecting job application");
+                                    return $q.reject(errResponse);
+                                }
+                        )
+        },
+                         
+            callForInterview: function(username, jobId, reason){
+            	  return $http.put(BASE_URL+'/callForInterview/'+username +'/'+jobId + '/' + reason)
                             .then(
                                     function(response){
+                                    	console.log("Successfully called for interiew")
                                         return response.data;
                                     }, 
                                     function(errResponse){
-                                        console.error('Error while rejecting job');
+                                        console.error('Error while calling for interview');
                                         return $q.reject(errResponse);
                                     }
                             )
             },
-             
-            callForInterview: function(userID, jobID){
-            	  return $http.put(BASE_URL+'/callForInterview/'+userID, jobID)
-                            .then(
-                                    function(response){
-                                        return response.data;
-                                    }, 
-                                    function(errResponse){
-                                        console.error('Error while call for interview');
-                                        return $q.reject(errResponse);
-                                    }
-                            )
-            },
             
-           
+          
+            
+            myAppliedJobs :function()
+            {
+            	console.log("Starting myAppliedJobs function")
+            	return $http.get(BASE_URL+'/getMyAppliedJobs').then(
+            		
+            	function(response)	{
+            	console.log("Ending myAppliedJobs function with success")
+            	return response.data;
+            },
+            function(errResponse)
+            {
+            	console.log("Ending myAppliedJobs function with errors")
+            	return $q.reject(errResponse);
+            }
+            	)
+            }
      
     }
-    
-            
-           
+              
  
 }]);

@@ -52,7 +52,7 @@ public class JobApplicationDAOImplTestCase {
 		Date date_applied = new Date();
 		jobApplication.setDate_applied(date_applied);
 		jobApplication.setRemarks("Y");
-		jobApplication.setStatus("Y");
+		jobApplication.setStatus('Y');
 
 		Assert.assertEquals("createJobApplicationTestCase", true,
 				jobApplicationDAO.SaveJobApplication(jobApplication));
