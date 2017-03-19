@@ -16,7 +16,8 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 			}
 
 			self.jobs = [];
-			self.jobApplication = {
+			
+			/*self.jobApplication = {
 				id : '',
 				username : '',
 				jobId : '',
@@ -26,7 +27,7 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 			}
 			
 			self.jobApplications=[];
-			self.myJobApplications=[];
+			self.myJobApplications=[];*/
 			
 			
 			
@@ -49,24 +50,24 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 			
 			},
 			
-			self.fetchAllOpenJobs=function(){
-	        	console.log("jobController-->Starting fetchAllOpenJobs function")
+			/*self.fetchAllJobApplications=function(){
+	        	console.log("JobController-->Starting fetchAllJobApplications function")
 	        
-	        	JobServices.fetchAllOpenJobs().then
+	        	JobServices.fetchAllJobApplications().then
 	        	(
 	        	function(d)
 	        	{
-	        		console.log("jobController-->Ending fetchAllOpenJobs function")
-	        		self.jobs=d;
+	        		console.log("JobController-->Ending fetchAllJobApplications function")
+	        		self.jobApplications=d;
 	        	},
 	        	function(errResponse)
 	        	{
-	        		console.log("jobController-->Ending fetchAllOpenJobs function")
-	        		console.log("jobController-->The open jobs are not fetched successfully")
+	        		console.log("jobController-->Ending fetchAllJobApplications function")
+	        		console.log("jobController-->The job applications are fetched successfully")
 	        	}
 	        	)
 			
-			},
+			},*/
 			
 			
 			self.jobById=function(id){
@@ -89,7 +90,7 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 			},
 			
 			
-			self.createNewJob=function(){
+			self.createNewJob=function(job){
 				console.log("jobController-->Starting CreateNewJob function")
 				
 				JobServices.createNewJob(job).then(
@@ -189,7 +190,7 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 
 			}
 			
-			self.selectJobApplication =function(username,jobId,reason)
+			/*self.selectJobApplication =function(username,jobId,reason)
 			{
 				console.log("JobController ==> Starting selectJobApplication function")
 
@@ -263,11 +264,22 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 					}
 			)
 
-	},
+	},*/
 			
 			self.applyForJob = applyForJob
 
 			self.fetchAllJobs();
 			
-			self.fetchAllOpenJobs();
+			/*self.fetchAllJobApplications();*/
+			
+			self.reset=function()
+			{
+				self.job ={
+						
+						title:'',
+						qualification : '',
+						description : ''
+						
+				}
+			};
 		} ])

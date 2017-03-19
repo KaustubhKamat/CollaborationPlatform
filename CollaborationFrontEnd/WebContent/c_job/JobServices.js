@@ -18,19 +18,19 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
         	 )
          },
          
-         fetchAllOpenJobs:function(){
-        	 console.log("Starting--> fetchAllOpenJobs function")
-        	 return $http.get(BASE_URL+'/getAllOpenJobs').then(
+        /* fetchAllJobApplications:function(){
+        	 console.log("Starting--> fetchAllJobApplications function")
+        	 return $http.get(BASE_URL+'/getAllJobApplications').then(
         	function(Response){
-        		console.log("Ending-->fetchAllOpenJobs function")
+        		console.log("Ending-->fetchAllJobApplications function")
         		return Response.data;
         	}	 
         	 )
-         },
+         },*/
             
             createNewJob: function(job){
             	console.log("Starting-->CreateNewJob function")
-            	return $http.post(BASE_URL+'/createNewJob').then(
+            	return $http.post(BASE_URL+'/createNewJob',job).then(
             	function(Response){
             		console.log("Ending-->CreateNewJob Function")
             		return Response.data;
@@ -69,11 +69,11 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	}
             	)
             },
-       
+            /*$http.post(BASE_URL+"/applyForJob/"+jobID)*/
             
             applyForJob: function(jobId) {
             	console.log("Starting applyForJob function")
-            	return $http.post(BASE_URL+'/applyForJob/',jobId ).then(
+            	return $http.post(BASE_URL+"/applyForJob/",jobId).then(
             	function(Response){
             		console.log("Ending applyForJob function")
             		return Response.data;
@@ -87,7 +87,7 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	
             },
             
-            selectJobApplication: function(username, jobId, reason) {
+            /*selectJobApplication: function(username, jobId, reason) {
 				console.log("Starting selectJobApplication function")
 				return $http.put(BASE_URL+'/selectedJobApplication/'+username +'/'+jobId + '/' + reason).then(
 				
@@ -132,7 +132,7 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
                                     }
                             )
             },
-            
+            */
           
             
             myAppliedJobs :function()

@@ -4,14 +4,16 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.collaborationPlatform.DAO.UserDAO;
@@ -30,6 +32,7 @@ public class UserController {
 
 	@Autowired
 	public HttpSession session;
+	
 	
 
 	@GetMapping("/getAllUsers")
@@ -128,6 +131,27 @@ public class UserController {
 		session.invalidate();
 		user.setErrorCode("200");
 		user.setErrorMessage("You have been successfully LoggedOut");
+		return new ResponseEntity<User>(user, HttpStatus.OK);
+	}
+	
+	
+	@RequestMapping(value="/makeAdmin", method=RequestMethod.PUT)
+	public ResponseEntity<User> makeAdmin(@PathVariable("username")String username)
+	{
+		user=userDAO.getById(username);
+		if(user==null)
+		{
+			user= new User();
+			user.setErrorCode("404");
+			user.setErrorMessage("User Does Not present with the UserID:-  "+username);
+		}
+		else {
+			user.setRole("admin");
+			user.setStatus("A");
+			userDAO.UpdateUser(user);
+			user.setErrorCode("200");
+			user.setErrorMessage("User :- "+username+" Role has been successfully updated");
+		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 }

@@ -131,14 +131,14 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 										{
 												$rootScope.isAdmin="true"
 												console.log("UserController ==> Login as "+$rootScope.currentUser.role)
-												console.log("UserController ==> Ending createUser function()")
+												console.log("UserController ==> Ending authenticate function with admin()")
 												$location.path('/adminhome')
 										}
 									else
 										{
 										        $rootScope.showProfile='true'
 										        console.log("UserController ==> Login as "+$rootScope.currentUser.role)
-												console.log("UserController ==> Ending authenticate function()")
+												console.log("UserController ==> Ending authenticate function with user()")
 												$location.path('/userHome')	
 										}
 								}
@@ -171,7 +171,19 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 )
 				}
 				
-				
+				self.makeAdmin = function(username){
+					console.log("UserController ==> Starting makeAdmin function()")
+					console.log("UserController ==> Calling MakeAdmin Function with username "+username)
+					UserServices.makeAdmin(username).then
+					(
+							function(d)
+							{
+								self.user =  d;
+								console.log("UserController ==> Ending makeAdmin function()")
+								alert(self.user.errorMessage)
+								$location.path('/allusers')
+							}											)
+}
 				
 			//logout function	
 			self.logoutUser=function(){

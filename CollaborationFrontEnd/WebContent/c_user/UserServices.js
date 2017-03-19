@@ -84,6 +84,27 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
             				return response.data;
             			}
             			)
+            },
+            
+            makeAdmin:function(username)
+            {
+            	console.log("Starting==> makeAdmin function")
+            	return $http.get(BASE_URL +'/makeAdmin/' +username)
+            	.then(
+            	
+            			function(Response){
+            				console.log("Ending==> makeAdmin function with success")
+            				return Response.data;
+            			},
+            			function(errResponse){
+            				console.error('Ending-->loginUser function with errors');
+                            return $q.reject(errResponse);
+            			},
+            			null
+            			
+            	)
+            	
+            	
             }
             
     }

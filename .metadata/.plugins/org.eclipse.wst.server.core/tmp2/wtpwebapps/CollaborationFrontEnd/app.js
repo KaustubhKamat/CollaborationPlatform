@@ -12,10 +12,10 @@ app.config(function($routeProvider) {
 			controller : 'UserController'		
 	})
 	
-	.when('/Logout', {
+	/*.when('/Logout', {
 		templateUrl : 'c_common/Home.html',
 			controller : 'UserController'		
-	})
+	})*/
 	
 	.when('/Register',{
 		templateUrl :'c_user/Register.html',
@@ -29,12 +29,23 @@ app.config(function($routeProvider) {
 			controller : 'UserController'
 	})
 	
+	.when('/allJobApplications',{
+		templateUrl:'c_admin/allJobApplications.html',
+			controller : 'JobController'
+	})
+	
 	//user related mapping
 	.when('/UserList',{
 		templateUrl:'c_admin/UserList.html',
 			controller : 'UserController'
 	})
 	
+	/*.when('/allJobApplications',{
+		templateUrl:'c_admin/allJobApplications.html',
+			controller : 'JobController'
+	})*/
+	
+	//admin related mapping
 	.when('/userHome',{
 		templateUrl:'c_user/userHome.html'
 	})
@@ -76,7 +87,12 @@ app.config(function($routeProvider) {
 		
 	})
 	
-	
+	//job related mapping
+	.when('/postJob', {
+		templateUrl : 'c_job/postJob.html',
+		controller :'JobController'
+		
+	})
 	
 	
 		});
