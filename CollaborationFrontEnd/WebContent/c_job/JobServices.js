@@ -8,10 +8,10 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
 		
     return {
          fetchAllJobs:function(){
-        	console.log("Starting--> fetchAllJobs function") 
+        	console.log("Starting--> fetchAllJobs function"); 
         	 return $http.get(BASE_URL+'/getAllJobs').then(
         	function(Response){
-        		console.log("Ending-->fetchAllJobs Function")
+        		console.log("Ending-->fetchAllJobs Function");
         		return Response.data;	
         	},
         	null
@@ -32,11 +32,11 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	console.log("Starting-->CreateNewJob function")
             	return $http.post(BASE_URL+'/createNewJob',job).then(
             	function(Response){
-            		console.log("Ending-->CreateNewJob Function")
+            		console.log("Ending-->CreateNewJob Function");
             		return Response.data;
             	},
             	function(errResponse){
-            		console.log("The job is not posted. Ending the CreateNewJob function ")
+            		console.log("The job is not posted. Ending the CreateNewJob function ");
             		return $q.reject(errResponse);
             	}
             	)       	
@@ -46,11 +46,11 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	console.log("Starting--> jobById Function")
             	return $http.get(BASE_URL+'/getJobById' +id).then(
             			function(Response){
-            				console.log("Ending-->jobById function")
+            				console.log("Ending-->jobById function");;
             				return Response.data;
             			},
             			function(errResponse){
-            				console.log("Ending-->jobById function")
+            				console.log("Ending-->jobById function");
             				return $q.reject(errResponse);
             			}
             			)	
@@ -60,11 +60,11 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	console.log("Starting--> updateJob function")
             	return $http.get(BASE_URL+'/UpdateJob',job).then(
             	function(Response){
-            		console.log("Ending--> updateJob Function with success")
+            		console.log("Ending--> updateJob Function with success");
             		return Response.data;
             	},
             	function(errResponse){
-            		console.log("Ending-->updateJob Function with errors")
+            		console.log("Ending-->updateJob Function with errors");
             		return $sq.reject(errResponse);
             	}
             	)
@@ -73,14 +73,14 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             
             applyForJob: function(jobId) {
             	console.log("Starting applyForJob function")
-            	return $http.post(BASE_URL+"/applyForJob/",jobId).then(
+            	return $http.post(BASE_URL+"/applyForJob",jobId).then(
             	function(Response){
-            		console.log("Ending applyForJob function")
+            		console.log("Ending applyForJob function");
             		return Response.data;
             	},		
             	
             	function(errResponse){
-            		console.log("Ending applyForJob function with errors")
+            		console.log("Ending applyForJob function with errors");
             		return $q.reject(errResponse);
             	}
             	)
@@ -141,12 +141,12 @@ app.service('JobServices', ['$http','$q', '$rootScope', function($http,$q,$rootS
             	return $http.get(BASE_URL+'/getMyAppliedJobs').then(
             		
             	function(response)	{
-            	console.log("Ending myAppliedJobs function with success")
+            	console.log("Ending myAppliedJobs function with success");
             	return response.data;
             },
             function(errResponse)
             {
-            	console.log("Ending myAppliedJobs function with errors")
+            	console.log("Ending myAppliedJobs function with errors");
             	return $q.reject(errResponse);
             }
             	)

@@ -89,7 +89,7 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
             makeAdmin:function(username)
             {
             	console.log("Starting==> makeAdmin function")
-            	return $http.get(BASE_URL +'/makeAdmin/' +username)
+            	return $http.put(BASE_URL +'/makeAdmin/' +username)
             	.then(
             	
             			function(Response){

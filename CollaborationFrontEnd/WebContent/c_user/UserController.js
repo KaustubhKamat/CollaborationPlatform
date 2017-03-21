@@ -171,10 +171,10 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 )
 				}
 				
-				self.makeAdmin = function(username){
+				self.makeAdmin = function(emailId){
 					console.log("UserController ==> Starting makeAdmin function()")
-					console.log("UserController ==> Calling MakeAdmin Function with username "+username)
-					UserServices.makeAdmin(username).then
+					console.log("UserController ==> Calling MakeAdmin Function with username "+emailId)
+					UserServices.makeAdmin(emailId).then
 					(
 							function(d)
 							{
@@ -197,7 +197,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 							$rootscope.IsLoggedIn="false"
 								self.user = d;
 							alert(self.user.errorMessage)
-                            $location.path('/')
+                           $location.path('/');
 						}
 						
 				)
@@ -209,6 +209,7 @@ app.controller('UserController', [ '$scope', 'UserServices', '$location',
 				console.log("Logged out function started", self.user)
 				self.logoutUser();
 				console.log("Successfully Loggedout ")
+				$location.path('/');
 			}
 			};
 			

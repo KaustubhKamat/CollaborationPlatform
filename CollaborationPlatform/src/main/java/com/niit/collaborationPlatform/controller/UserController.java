@@ -136,21 +136,21 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/makeAdmin", method=RequestMethod.PUT)
-	public ResponseEntity<User> makeAdmin(@PathVariable("username")String username)
+	public ResponseEntity<User> makeAdmin(@PathVariable("emailId")String emailId)
 	{
-		user=userDAO.getById(username);
+		user=userDAO.getById(emailId);
 		if(user==null)
 		{
 			user= new User();
 			user.setErrorCode("404");
-			user.setErrorMessage("User Does Not present with the UserID:-  "+username);
+			user.setErrorMessage("User Does Not present with the UserID:-  "+emailId);
 		}
 		else {
 			user.setRole("admin");
 			user.setStatus("A");
 			userDAO.UpdateUser(user);
 			user.setErrorCode("200");
-			user.setErrorMessage("User :- "+username+" Role has been successfully updated");
+			user.setErrorMessage("User :- "+emailId+" Role has been successfully updated");
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}

@@ -142,7 +142,7 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 			
 			
 			
-			
+			self.applyForJob = applyForJob
 			function applyForJob(jobId)
 			{
 				console.log("JobController--> Starting applyForJob function")
@@ -153,6 +153,7 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 					{
 					alert("Please Login to continue")
 					console.log("User has not logged in. So cannot apply")
+					$location.path('/login')	
 					return;
 					}
 				JobServices.applyForJob(jobId).then(
@@ -266,7 +267,7 @@ app.controller('JobController', [ 'JobServices', '$http', '$rootScope',
 
 	},*/
 			
-			self.applyForJob = applyForJob
+			
 
 			self.fetchAllJobs();
 			

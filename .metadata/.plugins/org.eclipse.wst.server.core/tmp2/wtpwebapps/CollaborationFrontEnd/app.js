@@ -12,10 +12,10 @@ app.config(function($routeProvider) {
 			controller : 'UserController'		
 	})
 	
-	/*.when('/Logout', {
-		templateUrl : 'c_common/Home.html',
+	.when('/Logout', {
+		/*templateUrl : 'c_common/Home.html',*/
 			controller : 'UserController'		
-	})*/
+	})
 	
 	.when('/Register',{
 		templateUrl :'c_user/Register.html',
@@ -94,5 +94,8 @@ app.config(function($routeProvider) {
 		
 	})
 	
+	.otherwise({
+		redirectTo : '/'
+	})
 	
 		});
