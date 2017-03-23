@@ -56,7 +56,7 @@ public class BlogController {
 	}
 	
 
-	@GetMapping("/getBlogById/{blogID}")
+	@GetMapping("/getBlogById{blogID}")
 	public ResponseEntity<Blog> getBlogById(@PathVariable("blogID") int id) {
 		blog = blogDAO.getByid(id);
 		
@@ -116,11 +116,11 @@ public class BlogController {
 		}
 
 		
-		 /** if(session.getAttribute("LoggedInUserRole")).equals("Admin") {
+		 /**//** if(session.getAttribute("LoggedInUserRole")).equals("Admin") {
 		 * blog.setErrorCode("404"); blog.setErrorMessage(
 		 * "Please Login to approve the blog"); }
-		 */
-
+		 *//*
+*/
 		// if the blog id is not present in th DB
 		if (blog == null) {
 			blog = new Blog();

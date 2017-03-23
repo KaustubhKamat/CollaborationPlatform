@@ -1,18 +1,20 @@
 package com.niit.collaborationPlatform.model;
 
 public class Test{
-	
-static int n;	
+	int x=10;
+	static int y=10;
+	static int z=10;
+	static int x1;
+	static int y2;
+	static int z2;
 public static void main(String[] args) {
+	x1=++y;
+	y2=z++;
+	z2=z;
 	
-	for(int i=1;i<10;i++)
-	{
-		if(i%5==0)
-		{
-			break;
-		}
-		n++;
-	}
+System.out.println(x1);
+System.out.println(y2);
+System.out.println(z2);
 }
 	
 	

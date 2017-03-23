@@ -46,7 +46,7 @@ app.controller('BlogController', ['BlogServices', '$http', '$rootScope',
 			
 			
 			//to get blog with id
-			self.blogById=function(){
+			self.blogById=function(id){
 	        	console.log("BlogController-->Starting blogById function")
 	        
 	        	BlogServices.blogById(id).then
@@ -55,6 +55,7 @@ app.controller('BlogController', ['BlogServices', '$http', '$rootScope',
 	        	{
 	        		console.log("BlogController-->Ending blogById function")
 	        		self.blog=d;
+	        		$location.path("/viewSelectedBlog");
 	        	},
 	        	function(errResponse)
 	        	{
@@ -101,6 +102,8 @@ app.controller('BlogController', ['BlogServices', '$http', '$rootScope',
 		};
 			
 		self.fetchAllBlogs();
+		
+		//self.blogById(id);
 		
 		self.reset=function()
 		{

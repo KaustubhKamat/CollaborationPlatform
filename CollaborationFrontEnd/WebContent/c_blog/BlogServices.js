@@ -34,11 +34,12 @@ app.service('BlogServices', ['$http','$q', '$rootScope', function($http,$q,$root
             },
             
             
-            blogById: function(){
+            blogById: function(id){
             	console.log("Starting--> blogById Function")
-            	return $http.get(BASE_URL+'//getBlogById' +id).then(
+            	return $http.get(BASE_URL+'/getBlogById' +id).then(
             			function(Response){
             				console.log("Ending-->blogById function")
+            				//$location.path("/viewSelectedBlog");
             				return Response.data;
             			},
             			function(errResponse){

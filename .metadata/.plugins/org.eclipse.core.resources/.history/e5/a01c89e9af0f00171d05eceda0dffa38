@@ -1,0 +1,17 @@
+package com.niit.collaborationPlatform.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.niit.collaborationPlatform.DAO.FriendDAO;
+import com.niit.collaborationPlatform.model.Friend;
+
+public class FriendController {
+
+@Autowired	
+public Friend friend;
+
+
+public FriendDAO friendDAO;
+
+}
+

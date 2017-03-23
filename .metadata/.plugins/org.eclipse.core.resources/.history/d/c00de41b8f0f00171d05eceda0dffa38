@@ -1,0 +1,94 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaborationPlatform.DAO.FriendDAO;
+import com.niit.collaborationPlatform.model.Friend;
+
+@Repository
+public class FriendDAOImpl implements FriendDAO {
+
+	@Autowired
+	SessionFactory sessionFactory;
+
+	public FriendDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+	public boolean SaveFriend(Friend friend) {
+		try {
+			sessionFactory.getCurrentSession().save(friend);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Transactional
+	public boolean DeleteFriend(Friend friend) {
+		try {
+			sessionFactory.getCurrentSession().delete(friend);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	
+	@Transactional
+	public boolean UpdateFriend(Friend friend) {
+		try {
+			sessionFactory.getCurrentSession().update(friend);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public List<Friend> getMyFriends(String username) {
+		String hql="From Friend where friendUserName= '"+username+"' and status ='N'";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return query.list();
+	}
+
+	@Transactional
+	public List<Friend> getMyFriendRequests(String emailId) {
+		String hql="select friendUserName From Friend where username= '"+emailId+"' and status ='N'";
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		return query.list();
+	}
+
+	@Override
+	public Friend get(String emailId, String friendEmailId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setOnline(String emailId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void setOffline(String emailId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Integer maxID() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

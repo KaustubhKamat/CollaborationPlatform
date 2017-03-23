@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
 	})
 	
 	.when('/Logout', {
-		/*templateUrl : 'c_common/Home.html',*/
+		templateUrl : 'c_common/Home.html',
 			controller : 'UserController'		
 	})
 	
@@ -69,6 +69,12 @@ app.config(function($routeProvider) {
 	
 	.when('/AllBlogs', {
 		templateUrl : 'c_blog/AllBlogs.html',
+		controller :'BlogController'
+		
+	})
+	
+	.when('/ViewSelectedBlog', {
+		templateUrl : 'c_blog/ViewSelectedBlog.html',
 		controller :'BlogController'
 		
 	})

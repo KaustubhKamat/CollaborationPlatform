@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="antlr.debug.Event"/>
 <fullyQualifiedTypeName name="oracle.net.aso.b"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.DAO.EventDAO"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.Event"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="com.niit.collaborationPlatform.model.Friend"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 </qualifiedTypeNameHistroy>

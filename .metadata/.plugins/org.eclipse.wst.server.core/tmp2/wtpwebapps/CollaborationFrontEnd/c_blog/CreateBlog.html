@@ -65,18 +65,12 @@ h2 {
 <div ng-controller="BlogController as ctrl">
 	
 <div class="col-sm-9 col-md-offset-5">
-		<h3>Create New Blog</h3> 
+		<h3>Create New Event</h3> 
 		</div>
 
 
 <form name="form" ng-submit="ctrl.submit()" class="form-horizontal" role="form">
 
-<!-- <div class="form-group" ng-class="{'has-error' : form.id.$dirty && form.id.$error.required}">
-    <div class="col-sm-offset-2 col-sm-10">
-      <input type="text" class="form-control" placeholder="Blog ID" ng-model="ctrl.blog.id" id="" name="id" required>
-      <span ng-show="form.id.$dirty && form.id.$error.required" class="help-block">Blog ID should be in given serially </span>
-    </div>
-  </div> -->
 
 		<div class="form-group" ng-class="{'has-error' : form.title.$dirty && form.title.$error.required}">
     <div class="col-sm-offset-2 col-sm-10">
@@ -84,6 +78,8 @@ h2 {
       <span ng-show="form.title.$dirty && form.title.$error.required" class="help-block">Title field cannot be left blank</span>
     </div>
   </div>
+  
+ 
   
    <div class="form-group" ng-class="{'has-error' : form.description.$dirty && form.description.$error.required}">
     <div class="col-sm-offset-2 col-sm-10">
@@ -104,6 +100,7 @@ h2 {
  
  </body>
  </html>
+
 
 
 

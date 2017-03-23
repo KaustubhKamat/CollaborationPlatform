@@ -1,0 +1,10 @@
+package com.niit.collaborationPlatform.controller;
+
+import com.niit.collaborationPlatform.model.Friend;
+
+public class FriendController {
+
+public Friend friend;
+
+}
+

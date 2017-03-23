@@ -1,0 +1,20 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.niit.collaborationPlatform.DAO.FriendDAO;
+import com.niit.collaborationPlatform.model.Friend;
+
+public class FriendDAOImplTestCase {
+
+	@Autowired
+	static Friend friend;
+	
+	@Autowired
+	static FriendDAO friendDAO;
+	
+
+}

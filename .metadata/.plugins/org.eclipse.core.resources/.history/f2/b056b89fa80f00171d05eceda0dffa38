@@ -1,0 +1,45 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaborationPlatform.DAO.FriendDAO;
+import com.niit.collaborationPlatform.model.Friend;
+
+public class FriendDAOImplTestCase {
+
+	@Autowired
+	static Friend friend;
+	
+	@Autowired
+	static FriendDAO friendDAO;
+	
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+	
+	
+	@BeforeClass
+	public void init()
+	{
+		context=new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		friendDAO=(FriendDAO) context.getBean("friendDAOImpl");
+		friend=(Friend) context.getBean("friend");
+	}
+	
+	public void CreateFriendTestCase()
+	{
+		friend.setId(1);
+		friend.setUsername("Kaustubh");
+		friend.setFriendUserName("Vijay");
+		friend.setStatus('N');
+		friend.setIsOnline('Y');
+	}
+	
+
+}

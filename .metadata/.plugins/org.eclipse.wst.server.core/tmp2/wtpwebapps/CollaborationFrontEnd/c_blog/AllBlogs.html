@@ -35,7 +35,7 @@ body {
 
 	<div ng-controller="BlogController as ctrl">
 
-		
+
 
 
 
@@ -60,6 +60,7 @@ body {
 									<th class="text-center" width="200">Blog Title</th>
 									<th class="text-center" width="200">Blog Author</th>
 									<th class="text-center" width="400">Blog Description</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -70,6 +71,12 @@ body {
 									<td class="text-center">{{blog.title}}</td>
 									<td class="text-center">{{blog.emailid}}</td>
 									<td class="text-center">{{blog.description}}</td>
+
+									<td><button type="button"
+											ng-click="ctrl.blogById(blog.id)"
+											class="btn btn-primary">Select Blog</button>
+										</span></td>
+
 								</tr>
 							</tbody>
 						</table>
