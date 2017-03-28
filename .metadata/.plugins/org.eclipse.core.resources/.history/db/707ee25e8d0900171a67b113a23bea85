@@ -1,7 +1,0 @@
-package com.niit.collaborationPlatform.DAOImpl;
-
-import com.niit.collaborationPlatform.DAO.JobApplicationDAO;
-
-public class JobApplicationDAOImpl implements JobApplicationDAO {
-
-}

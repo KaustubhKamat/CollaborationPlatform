@@ -1,0 +1,52 @@
+package com.niit.collaborationPlatform.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.niit.collaborationPlatform.DAO.ForumDAO;
+import com.niit.collaborationPlatform.model.Forum;
+
+@Repository
+public class ForumDAOImpl implements ForumDAO {
+	
+	@Autowired
+	public SessionFactory sessionFactory;
+	
+	public ForumDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory=sessionFactory;
+	}
+	
+
+	@Override
+	public boolean SaveForum(Forum forum) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean DeleteForum(Forum forum) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean UpdateForum(Forum forum) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Forum getById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Forum> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

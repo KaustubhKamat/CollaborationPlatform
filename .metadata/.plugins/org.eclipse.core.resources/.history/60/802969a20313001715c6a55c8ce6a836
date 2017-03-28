@@ -1,0 +1,75 @@
+package com.niit.collaborationplatform;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaborationPlatform.DAO.EventDAO;
+import com.niit.collaborationPlatform.DAO.ForumDAO;
+import com.niit.collaborationPlatform.DAOImpl.ForumDAOImpl;
+import com.niit.collaborationPlatform.model.Event;
+import com.niit.collaborationPlatform.model.Forum;
+
+import junit.framework.Assert;
+
+public class ForumDAOImplTestCase {
+
+	@Autowired
+	static Forum forum;
+
+	@Autowired
+	static ForumDAO forumDAO;
+
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+
+	@BeforeClass
+	public static void init() {
+		context = new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		forumDAO=(ForumDAO) context.getBean("forumDAOImpl");
+		forum=(Forum) context.getBean("forum");
+	}
+
+	@Test
+	public void CreateForumTestCase() {
+		forum.setId(1);
+		forum.setEmailId("kaustubh235@gmail.com");
+		Date date=new Date();
+		forum.setDate_time(date);
+		forum.setMessage("Message 1");
+		Assert.assertEquals("createForumTestCase", false, forumDAO.SaveForum(forum));		
+	}
+
+	/*
+	//@Test
+	public void DeleteEventTestCase() {
+		event = eventDAO.getEventById(3);
+		Assert.assertEquals("DeleteEventTestCase", false, eventDAO.DeleteEvent(event));
+
+	}
+
+	
+	//@Test
+	public void UpdateChatTestCase() {
+		event = eventDAO.getEventById(2);
+		event.setVenue("Chennai");
+		event.setDescription("The venue is changed from Bangalore to Chennai");
+		Assert.assertEquals("DeleteEventTestCase", false, eventDAO.UpdateEvent(event));
+
+	}
+
+	@Test
+	public void getByIDTestCase() {
+		event = eventDAO.getEventById(1);
+		System.out.println(event.getName());
+		System.out.println(event.getDescription());
+	}*/
+
+}

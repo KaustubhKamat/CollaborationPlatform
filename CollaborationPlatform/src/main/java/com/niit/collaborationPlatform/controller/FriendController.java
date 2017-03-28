@@ -1,18 +1,13 @@
-package com.niit.collaborationPlatform.controller;
+/*package com.niit.collaborationPlatform.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
-import javax.xml.bind.JAXBException;
-
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
-import org.omg.CORBA.FREE_MEM;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.niit.collaborationPlatform.DAO.FriendDAO;
 import com.niit.collaborationPlatform.DAO.UserDAO;
 import com.niit.collaborationPlatform.model.Friend;
-
-import jdk.internal.org.xml.sax.SAXException;
-import oracle.net.aso.n;
 
 public class FriendController {
 
@@ -203,3 +195,4 @@ public class FriendController {
 	
 	
 }
+*/

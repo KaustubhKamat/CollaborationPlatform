@@ -1,0 +1,112 @@
+'use strict';
+
+app.controller('FriendController', ['UserServices','FriendServices', '$http', '$rootScope',
+		'$location', '$scope',
+		function(UserServices, FriendServices, $http, $rootScope, $location, $scope) {
+
+			$scope.message = "Message from Friend Controller"
+			console.log("Starting-->FriendController")
+
+			var self = this;
+			self.friend = {
+				id : '',
+				username : '',
+				friendUserName :'',
+			    status : '',
+				isOnline : ''		
+			}
+
+			self.friends=[];
+			self.myfriends=[];
+			
+			self.user = {
+					username : '',
+					emailId : '',
+					password : '',
+					role : '',
+					mobile : '',
+					gender : '',
+					status : '',
+					reason : '',
+					isOnline : '',
+					errorCode:'',
+					errorMessage:''
+				}
+			
+			self.users=[];
+			
+			
+			var currentUser=$rootScope.currentUser;
+			
+			//to get all the friends
+			self.getAllFriend=function(){
+	        	console.log("FriendController-->Starting getAllFriend function")
+	        
+	        	FriendServices.getAllFriend().then
+	        	(
+	        	function(Response)
+	        	{
+	        		console.log("FriendController-->Ending getAllFriend function")
+	        		self.friends=Response;
+	        	},
+	        	function(errResponse)
+	        	{
+	        		console.log("FriendController-->Ending getAllFriend function")
+	        		console.log("FriendController-->The friends are not fetched successfully")
+	        	}
+	        	)
+			
+			},
+					
+			
+			//to send the friend request
+			self.sendFriendRequest=function(friendUserName){
+				console.log("FriendController-->Starting sendFriendRequest function")
+				
+				FriendServices.sendFriendRequest(friendUserName).then(
+				function(d)
+				{
+					console.log("FriendController-->Ending sendFriendRequest function")
+					alert("The Friend is posted successfully")
+				},
+				
+				function(errResponse)
+				{
+					alert("The friend was not posted. Please try again after sometime")
+					console.log("jobController ==> Ending SaveNewJob function()")
+
+					console.log("Error while posting friend, please try again after sometime")
+				}
+				)
+				
+			},
+			
+			self.submit =function()
+			{
+				console.log("friendController ==> Starting friend submit function()")
+
+				self.SaveNewfriend(self.friend);
+				self.reset();
+				console.log("friendController ==> Ending friend submit function()")
+
+		};
+			
+		self.fetchAllfriends();
+		
+		//self.friendById(id);
+		
+		self.reset=function()
+		{
+			self.friend ={
+					
+					id:'',
+					title : '',
+					description : ''
+					
+			}
+		};
+		
+			
+
+		} ])
+ 

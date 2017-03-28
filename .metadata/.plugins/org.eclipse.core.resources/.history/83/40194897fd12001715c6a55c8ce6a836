@@ -1,0 +1,10 @@
+package com.niit.collaborationPlatform.model;
+
+public class OutputMessage extends Message {
+
+	public OutputMessage(String message) {
+		super(message);
+		// TODO Auto-generated constructor stub
+	}
+
+}

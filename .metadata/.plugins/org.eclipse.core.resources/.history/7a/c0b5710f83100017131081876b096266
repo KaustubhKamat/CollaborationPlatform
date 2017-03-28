@@ -1,0 +1,65 @@
+
+<span ng-show="IsLoggedIn=='true'"> </span>
+
+<link rel="stylesheet" type="text/css"
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+<div ng-controller="FriendController as ctrl">
+
+	<div class="container bootstrap snippet">
+		<!--     <div class="row">
+ -->
+		<div class="col-lg-8">
+
+			<p style="color: #0729e7; font-size: 20px">
+				Search Friends Here .,., <input type="text" ng-model="search_text"
+					placeholder="Type here,.,">
+			</p>
+
+			<div ng-controller="UserController as ctrl">
+				<div class="table-responsive">
+					<table class="table user-list">
+
+
+						<thead>
+							<tr>
+								<th class="text-center" width="200">UserName</th>
+									<th class="text-center" width="200">Mobile</th>
+									<th class="text-center" width="200">EmailId</th>
+							</tr>
+						</thead>
+						<tbody>
+
+
+													
+								<tr ng-repeat="user in ctrl.users">
+
+									<td class="text-center">{{user.username}}</td>
+									<td class="text-center">{{user.mobile}}</td>
+									<td class="text-center">{{user.emailId}}</td>
+
+
+								<td><img src="Images/{{user}}.jpg" alt="" width="150px">
+									<a href="#"> {{user}}</a><br> <span class="user-subhead"></span>
+								</td>
+								</div>
+
+
+								<td class="text-center">
+									<button type="button" ng-click="ctrl.send(user)"
+										class="btn btn-primary">Add Friend</button>
+
+								</td>
+
+								<td><a style="text-decoration: none"></a></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 
+</body>
+</html> -->

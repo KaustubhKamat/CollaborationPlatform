@@ -97,11 +97,28 @@ app.service('UserServices', ['$http','$q', '$rootScope', function($http,$q,$root
             				return Response.data;
             			},
             			function(errResponse){
-            				console.error('Ending-->loginUser function with errors');
+            				console.error('Ending-->makeAdmin function with errors');
                             return $q.reject(errResponse);
-            			},
-            			null
+            			}
             			
+            	)
+            	
+            	
+            },
+            
+            getAllFriend:function()
+            {
+            	console.log("Starting==> getAllFriends function")
+            	return $http.get(BASE_URL + '/getAllFriends')
+            	.then(
+            			function(Response){
+            				console.log("Ending==> getAllFriends function with success")
+            				return Response.data;
+            			},
+            			function(errResponse){
+            				console.error('Ending-->getAllFriends function with errors');
+                            return $q.reject(errResponse);
+            			}		
             	)
             	
             	

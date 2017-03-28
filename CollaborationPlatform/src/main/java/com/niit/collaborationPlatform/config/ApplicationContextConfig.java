@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.collaborationPlatform.model.Blog;
 import com.niit.collaborationPlatform.model.Chat;
 import com.niit.collaborationPlatform.model.Event;
+import com.niit.collaborationPlatform.model.Forum;
 import com.niit.collaborationPlatform.model.Friend;
 import com.niit.collaborationPlatform.model.Job;
 import com.niit.collaborationPlatform.model.JobApplication;
@@ -34,7 +35,7 @@ public class ApplicationContextConfig {
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 		dataSource.setUsername("collaborationplatform");
-		dataSource.setPassword("password");
+		dataSource.setPassword("password1");
 		return dataSource;
 	}
 
@@ -61,6 +62,7 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Event.class);
 		sessionBuilder.addAnnotatedClass(JobApplication.class);
 		sessionBuilder.addAnnotatedClass(Friend.class);
+		sessionBuilder.addAnnotatedClass(Forum.class);
 		
 		
         return sessionBuilder.buildSessionFactory();

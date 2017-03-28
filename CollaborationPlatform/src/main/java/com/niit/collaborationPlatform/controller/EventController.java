@@ -1,4 +1,4 @@
-package com.niit.collaborationPlatform.controller;
+/*package com.niit.collaborationPlatform.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -105,3 +105,4 @@ public class EventController {
 	}
 
 }
+*/

@@ -1,0 +1,8 @@
+package com.niit.collaborationPlatform.DAO;
+
+import com.niit.collaborationPlatform.model.Forum;
+
+public interface ForumDAO {
+
+	public boolean SaveForum(Forum forum);
+}

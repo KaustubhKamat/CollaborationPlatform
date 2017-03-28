@@ -100,6 +100,21 @@ app.config(function($routeProvider) {
 		
 	})
 	
+	
+	//friend related mapping
+	.when('/allFriends', {
+		templateUrl : 'c_friend/allFriends.html',
+		controller :'FriendController'
+		
+	})
+	.when('/allFriends', {
+		templateUrl : 'c_friend/allFriends.html',
+		controller :'FriendController'
+		
+	})
+	
+	
+	
 	.otherwise({
 		redirectTo : '/'
 	})

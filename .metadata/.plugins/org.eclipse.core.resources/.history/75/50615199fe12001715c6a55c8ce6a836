@@ -1,0 +1,21 @@
+package com.niit.collaborationPlatform.model;
+
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Table
+public class Forum extends BaseDomain{
+
+	@Id
+	public int id;
+	
+	public String emailId;
+	
+	public String message;
+	
+	public Date date_time;
+	
+}
