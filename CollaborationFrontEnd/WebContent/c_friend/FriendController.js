@@ -60,11 +60,11 @@ app.controller('FriendController', ['UserServices','FriendServices', '$http', '$
 					
 			
 			//to send the friend request
-			self.sendFriendRequest=function(friendUserName){
+			self.sendFriendRequest=function(friendEmailId){
 				console.log("FriendController-->Starting sendFriendRequest function")
 				console.log(friendUserName)
 				
-				FriendServices.sendFriendRequest(friendUserName).then(
+				FriendServices.sendFriendRequest(friendEmailId).then(
 						function(d)
 						{
 							self.friend=d;
@@ -82,23 +82,23 @@ app.controller('FriendController', ['UserServices','FriendServices', '$http', '$
 				
 			},
 			
-			self.send =function(friendUserName)
+			self.send =function(friendEmailId)
 			{
-				console.log(friendUserName)
-				console.log(self.user.username)
+				console.log(friendEmailId)
+				console.log(self.user.emailId)
 				console.log("FriendController ==> Starting send function under sendFriendRequest")
-				self.sendFriendRequest(friendUserName)
+				self.sendFriendRequest(friendEmailId)
                 console.log("FriendController ==> Ending send function under sendFriendRequest")
                 self.getAllFriend();
 				$location.path('/myFriends')
 		},
 		
 		//to accept the friend request
-		self.acceptFriendRequest=function(friendUserName){
+		self.acceptFriendRequest=function(friendEmailId){
 			console.log("FriendController-->Starting acceptFriendRequest function")
-			console.log("calling acceptFriendRequest function with friend UserName as: "+friendUserName)
+			console.log("calling acceptFriendRequest function with friend UserName as: "+friendEmailId)
 			
-			FriendServices.acceptFriendRequest(friendUserName).then(
+			FriendServices.acceptFriendRequest(friendEmailId).then(
 					function(d)
 					{
 						self.friend=d;

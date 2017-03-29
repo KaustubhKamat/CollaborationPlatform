@@ -8,9 +8,9 @@ app.service('FriendServices', ['$http','$q', '$rootScope', function($http,$q,$ro
 		
     return {
 		//to send the friend request
-         sendFriendRequest:function(friendUserName){
+         sendFriendRequest:function(friendEmailId){
         	console.log("Starting--> sendFriendRequest function") 
-        	 return $http.get(BASE_URL+'/sendFriendRequest',friendUserName ).then(
+        	 return $http.get(BASE_URL+'/sendFriendRequest',friendEmailId ).then(
         	function(Response){
         		console.log("Ending-->sendFriendRequet Function")
         		return Response.data;	
@@ -25,9 +25,9 @@ app.service('FriendServices', ['$http','$q', '$rootScope', function($http,$q,$ro
          },
          
             //to accept the accept request
-            acceptFriendRequest:function(friendUserName){
+            acceptFriendRequest:function(friendEmailId){
             	console.log("Starting--> acceptFriendRequest function") 
-           	 return $http.get(BASE_URL+'/acceptFriendRequest',friendUserName ).then(
+           	 return $http.get(BASE_URL+'/acceptFriendRequest',friendEmailId ).then(
            	function(Response){
            		console.log("Ending-->acceptFriendRequet Function")
            		return Response.data;	
@@ -43,9 +43,9 @@ app.service('FriendServices', ['$http','$q', '$rootScope', function($http,$q,$ro
             
             
             //to reject the friend request
-            rejectFriendRequest:function(friendUserName){
+            rejectFriendRequest:function(friendEmailId){
             	console.log("Starting--> rejectFriendRequest function") 
-           	 return $http.get(BASE_URL+'/rejectFriendRequest',friendUserName ).then(
+           	 return $http.get(BASE_URL+'/rejectFriendRequest',friendEmailId ).then(
            	function(Response){
            		console.log("Ending-->rejectFriendRequet Function")
            		return Response.data;	
@@ -96,7 +96,7 @@ app.service('FriendServices', ['$http','$q', '$rootScope', function($http,$q,$ro
             	            	            }, 	            
             	 
             	            	            
-            	            	            //to get my friendRequest
+            	            	            //to get my friends
             	            	            getMyFriends : function()
             	            	            {
             	            	            	console.log("Starting--> getMyFriend function") 

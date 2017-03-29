@@ -22,22 +22,6 @@ public class Friend extends BaseDomain{
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getFriendUserName() {
-		return friendUserName;
-	}
-
-	public void setFriendUserName(String friendUserName) {
-		this.friendUserName = friendUserName;
-	}
-
 	public char getStatus() {
 		return status;
 	}
@@ -54,10 +38,26 @@ public class Friend extends BaseDomain{
 		this.isOnline = isOnline;
 	}
 
-	public String username;
+	public String emailId;
 	
-	public String friendUserName;
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String friendEmailId;
 	
+	public String getFriendEmailId() {
+		return friendEmailId;
+	}
+
+	public void setFriendEmailId(String friendEmailId) {
+		this.friendEmailId = friendEmailId;
+	}
+
 	public char status;
 	
 	public char isOnline;

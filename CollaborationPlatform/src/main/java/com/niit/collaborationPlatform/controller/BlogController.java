@@ -1,4 +1,4 @@
-/*package com.niit.collaborationPlatform.controller;
+package com.niit.collaborationPlatform.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -116,11 +116,11 @@ public class BlogController {
 		}
 
 		
-		 *//** if(session.getAttribute("LoggedInUserRole")).equals("Admin") {
+		 /**//** if(session.getAttribute("LoggedInUserRole")).equals("Admin") {
 		 * blog.setErrorCode("404"); blog.setErrorMessage(
 		 * "Please Login to approve the blog"); }
 		 *//*
-
+*/
 		// if the blog id is not present in th DB
 		if (blog == null) {
 			blog = new Blog();
@@ -157,4 +157,3 @@ public class BlogController {
 		
 	
 }
-*/

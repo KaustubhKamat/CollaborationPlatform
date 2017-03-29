@@ -38,9 +38,9 @@ public class FriendDAOImplTestCase {
 	//@Test
 	public void CreateFriendTestCase()
 	{
-		friend.setId(2);
-		friend.setUsername("Karan");
-		friend.setFriendUserName("Suresh");
+		friend.setId(3);
+		friend.setEmailId("vijay@gmail.com");
+		friend.setFriendEmailId("kaustubh235@gmail.com");;
 		friend.setStatus('N');
 		friend.setIsOnline('Y');
 		
@@ -62,7 +62,7 @@ public class FriendDAOImplTestCase {
     public void UpdatefriendTestCase()
     {
    	 friend=friendDAO.getByid(1);
-   	 friend.setFriendUserName("Sanjay");
+   	 friend.setFriendEmailId("sunny@gmail.com");
    	 Assert.assertEquals("DeletefriendTestCase", false, friendDAO.UpdateFriend(friend));
     }
     
@@ -70,7 +70,7 @@ public class FriendDAOImplTestCase {
     public void getByIDTestCase()
     {
     friend=friendDAO.getByid(1);
-    System.out.println(friend.getFriendUserName());
+    System.out.println(friend.getFriendEmailId());
     }
 }
 				

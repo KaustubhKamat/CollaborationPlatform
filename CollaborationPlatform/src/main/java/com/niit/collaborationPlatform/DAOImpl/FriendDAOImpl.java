@@ -52,8 +52,8 @@ public class FriendDAOImpl implements FriendDAO {
 	}
 
 	@Transactional
-	public List<Friend> getMyFriendRequests(String username) {
-		String hql = "select friendUserName From Friend where username= '" + username + "' and status ='N'";
+	public List<Friend> getMyFriendRequests(String emailId) {
+		String hql = "select friendUserName From Friend where username= '" + emailId + "' and status ='N'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
 	}
@@ -69,23 +69,23 @@ public class FriendDAOImpl implements FriendDAO {
 	
 
 	@Transactional
-	public Friend get(String username, String friendUserName) {
-		String hql = "From Friend where username = '" + username + "' and friendUserName = '" + friendUserName + "'";
+	public Friend get(String emailId, String friendEmailId) {
+		String hql = "From Friend where username = '" + emailId + "' and friendUserName = '" + friendEmailId + "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		return (Friend) query.uniqueResult();
 	}
 
 	@Transactional
-	public void setOnline(String username) {
-		String hql = "UPDATE Friend SET isOnline = 'Y' where username= '" + username + "'";
+	public void setOnline(String emailId) {
+		String hql = "UPDATE Friend SET isOnline = 'Y' where username= '" + emailId + "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.executeUpdate();
 
 	}
 
 	@Transactional
-	public void setOffline(String username) {
-		String hql = "UPDATE Friend SET isOnline = 'N' where username= '" + username + "'";
+	public void setOffline(String emailId) {
+		String hql = "UPDATE Friend SET isOnline = 'N' where username= '" + emailId + "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.executeUpdate();
 	}
@@ -111,9 +111,9 @@ public class FriendDAOImpl implements FriendDAO {
 	}
 
 	@Transactional
-	public List<Friend> getMyFriends(String username) {
-		String hql1 = "Select friendUserName from Friend where username = '" + username + "' and status ='A'";
-		String hql2 = "Select username as FN From Friend Where friendUserName = '" + username + "' and status = 'A'";
+	public List<Friend> getMyFriends(String emailId) {
+		String hql1 = "Select friendUserName from Friend where username = '" + emailId + "' and status ='A'";
+		String hql2 = "Select username as FN From Friend Where friendUserName = '" + emailId+ "' and status = 'A'";
 		Query query1 = sessionFactory.getCurrentSession().createQuery(hql1);
 		Query query2 = sessionFactory.getCurrentSession().createQuery(hql2);
 		List<Friend> myFriends1 = query1.list();

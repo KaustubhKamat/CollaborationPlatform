@@ -4,9 +4,12 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 h2 {
 	text-align: center;
@@ -18,7 +21,6 @@ h4 {
 	text-align: center;
 }
 
-
 h3 {
 	text-align: right;
 }
@@ -26,6 +28,7 @@ h3 {
 a {
 	color: black;
 }
+
 body {
 	background: linear-gradient(orange, lightblue);
 }
@@ -33,34 +36,41 @@ body {
 div {
 	word-spacing: 5px;
 }
-
 </style>
 
 </head>
 <body ng-app="">
 
-	
-<div ng-controller="UserController as ctrl">
 
-<!-- <div class="nav navbar-nav navbar-right">
+	<div ng-controller="UserController as ctrl">
+
+		<!-- <div class="nav navbar-nav navbar-right">
 <a href="#" ng-click="ctrl.myprofile()"> My Profile</a>
 </div> -->
 
-<div class="container">
-<div ng-show="currentUser.emailId">
-<div class="nav navbar-nav navbar-right">
-<h3>Welcome {{currentUser.username}}  &nbsp&nbsp<a href="/Logout" ng-click="ctrl.logoutUser()"class="btn btn-warning" style="color: black"> Logout</a>  &nbsp  &nbsp<a href="#/myProfile" class="btn btn-warning" style="color: black">My profile</a></h3>
-</div>
-</div>
-</div>
+		<div class="container">
+			<div ng-show="currentUser.emailId">
+				<div class="nav navbar-nav navbar-right">
+					<h3>
+						Welcome {{currentUser.username}} &nbsp &nbsp<a href="#/userHome"
+							class="btn btn-warning" style="color: black">Home</a> &nbsp&nbsp<a href="/Logout"
+							ng-click="ctrl.logoutUser()" class="btn btn-warning"
+							style="color: black"> Logout</a> &nbsp &nbsp<a href="#/myProfile"
+							class="btn btn-warning" style="color: black">My profile</a>
+					</h3>
+				</div>
+			</div>
+		</div>
 
-<div class="container">
-<div ng-hide="currentUser.emailId">
-<div class="nav navbar-nav navbar-right"></div>
-<h3><a class="btn btn-warning" href="#/login" style="color: black;">Login</a></h3>
-</div>
-</div>
-</div>
+		<div class="container">
+			<div ng-hide="currentUser.emailId">
+				<div class="nav navbar-nav navbar-right"></div>
+				<h3>
+					<a class="btn btn-warning" href="#/login" style="color: black;">Login</a>
+				</h3>
+			</div>
+		</div>
+	</div>
 
 
 	<div class="column">

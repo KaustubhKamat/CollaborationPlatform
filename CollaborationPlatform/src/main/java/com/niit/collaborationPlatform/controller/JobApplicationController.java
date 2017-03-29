@@ -1,4 +1,4 @@
-/*package com.niit.collaborationPlatform.controller;
+package com.niit.collaborationPlatform.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -175,4 +175,3 @@ public class JobApplicationController {
 	}
 
 }
-*/

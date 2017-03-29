@@ -14,15 +14,15 @@ public interface FriendDAO {
 	
 	public boolean UpdateFriend(Friend friend);
 	
-	public List<Friend> getMyFriends(String username);
+	public List<Friend> getMyFriends(String emailId);
 	
 	public List<Friend> getMyFriendRequests(String emailId);
 	
-	public Friend get(String username, String friendUserName);
+	public Friend get(String emailId, String friendEmailId);
 	
-	public void setOnline(String username);
+	public void setOnline(String emailId);
 	
-	public void setOffline(String username);
+	public void setOffline(String emailId);
 	
 	public List<Friend> getMySentFriendRequests(String emailId);
 	

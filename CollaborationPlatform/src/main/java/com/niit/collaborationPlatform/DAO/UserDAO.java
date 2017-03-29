@@ -16,7 +16,7 @@ public interface UserDAO {
 	
 	public List<User > list();
 	
-	public List<User> getAllList(String username);
+	public List<User> getAllList(String emailId);
 	
 	public void setOnline(String username);
 	
