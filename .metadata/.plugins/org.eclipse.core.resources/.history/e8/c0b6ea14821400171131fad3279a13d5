@@ -1,0 +1,9 @@
+"use strict";
+
+app.controller('ChatForumController', function(ChatForumServices, $scope){
+	
+console.log("Starting ChatForumController")
+
+$scope.chatMessage= "Message from ChatForum Controller"
+	
+})

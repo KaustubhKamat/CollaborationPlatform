@@ -1,0 +1,15 @@
+package com.niit.collaborationPlatform.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.niit.collaborationPlatform.DAO.ForumDAO;
+import com.niit.collaborationPlatform.model.Forum;
+
+public class ForumController {
+
+	@Autowired
+	public Forum forum;
+	
+	@Autowired
+	public ForumDAO forumDAO;
+}

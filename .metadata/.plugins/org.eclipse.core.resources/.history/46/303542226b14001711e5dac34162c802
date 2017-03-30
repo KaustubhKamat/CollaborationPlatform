@@ -1,0 +1,46 @@
+package com.niit.collaborationPlatform.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.niit.collaborationPlatform.DAO.ForumDAO;
+import com.niit.collaborationPlatform.model.Forum;
+
+public class ForumController {
+
+	@Autowired
+	public Forum forum;
+
+	@Autowired
+	public ForumDAO forumDAO;
+
+	// get list of all forums
+	@RequestMapping("/getAllForums")
+	public ResponseEntity<List<Forum>> getAllForums() {
+		List<Forum> forums = forumDAO.list();
+		if (forums.isEmpty()) {
+			forum.setErrorCode("404");
+			forum.setErrorMessage("No Forums were found");
+			forums.add(forum);
+		}
+		return new ResponseEntity<List<Forum>>(forums, HttpStatus.OK);
+	}
+
+	@RequestMapping("/forumById/{id}")
+	public ResponseEntity<Forum> getForumById(@PathVariable("id")String id)
+	{
+		forum=forumDAO.getById(id);
+		if(forum==null)
+		{
+			forum=new Forum();
+			forum.setErrorCode("404");
+			forum.setErrorMessage("No Forums were found");
+		}
+		return new ResponseEntity<Forum>(forum, HttpStatus.OK);
+	}
+}

@@ -1,0 +1,11 @@
+package com.niit.collaborationPlatform.controller;
+
+import com.niit.collaborationPlatform.DAO.ForumDAO;
+import com.niit.collaborationPlatform.model.Forum;
+
+public class ForumController {
+
+	public Forum forum;
+	
+	public ForumDAO forumDAO;
+}

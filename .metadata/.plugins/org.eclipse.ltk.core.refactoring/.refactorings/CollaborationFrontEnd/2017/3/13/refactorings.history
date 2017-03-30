@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CollaborationFrontEnd/WebContent/c_chatForum/ChatForum.js&apos; to &apos;ChatForumServices.js&apos;" description="Rename resource &apos;ChatForum.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/c_chatForum/ChatForum.js" name="ChatForumServices.js" stamp="1490787993721" updateReferences="true"/>
+</session>

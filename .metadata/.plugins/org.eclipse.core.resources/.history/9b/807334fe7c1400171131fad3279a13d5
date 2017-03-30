@@ -1,0 +1,26 @@
+"use strict";
+
+app.factory('ChatForumServices', function($q, $timeout){
+	
+	console.log("ChatForumServices==> Starting ChatForumServices")
+	
+	var service={};
+	
+	var listner=$q.defer();
+	
+	var socket = {
+			
+			client : null,
+			stomp : null
+	}
+	
+	var messageIds = [];
+	
+	service.reConnectTime = 30000;
+	
+	service.socketURL = 'http://localhost:8085/CollaborationPlatform/chatForum'
+	
+	
+	
+	
+})
