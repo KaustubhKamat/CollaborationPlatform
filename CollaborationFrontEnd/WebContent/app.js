@@ -113,6 +113,12 @@ app.config(function($routeProvider) {
 		
 	})
 	
+	.when('/myFriends', {
+		templateUrl : 'c_friend/myFriends.html',
+		controller :'FriendController'
+		
+	})
+	
 	
 	
 	.otherwise({

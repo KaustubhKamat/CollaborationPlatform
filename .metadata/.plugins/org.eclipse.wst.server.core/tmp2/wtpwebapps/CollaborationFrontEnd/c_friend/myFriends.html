@@ -1,26 +1,93 @@
-<span ng-show="IsLoggedIn=='true'">
-</span>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<style>
+body {
+	background: linear-gradient(orange, lightblue);
+}
 
+h2 {
+	text-align: center;
+}
+
+li {
+	font-size: large;
+	text-align: left;
+}
+</style>
+
+</head>
+<body>
 <div ng-controller="FriendController as ctrl">
-{{empty}}
-
-<h2 align="center" style="color: #0806a9 ;font-family:inherit" >Friends Zone</h2>
+	<div ng-repeat="friend in ctrl.friends">
 
 
-<p style="color: #0729e7;font-size:20px ">Search Friends Here .,.,
-	<input type="text" ng-model="search_text" placeholder="Type here,.,"></p>
- 
- <div ng-repeat ="friend in ctrl.myFriends | filter: search_text">
- 
-	
-		<span class="glyphicon glyphicon-user " style="color:DarkCyan"></span>
-				<img src="Images/{{friend}}.jpg" alt="UserName" width="150px">
-		
-         <a href="#" style="text-decoration: none">{{friend}}</a><br>
- 
-			<hr style="border-width: 10px;color: black">
+		<div ng-show="friend.isOnline=='Y'">
+
+			<a data-target="#myModal" data-toggle="modal" class="MainNavText" data-id={{friend.id}}
+				id="MainNavHelp"> <span class="glyphicon glyphicon-user "
+				style="color: green"></span> {{friend.id}}
+			</a>
+
+		</div>
+
+		<div ng-show="friend.isOnline=='N'">
+			<a data-target="#myModal" data-toggle="modal" class="MainNavText" data-id={{friend.id}}
+				id="MainNavHelp"> <span class="glyphicon glyphicon-user "
+				style="color: gray"></span> {{friend.id}}
+			</a>
+
+		</div>
+	</div>
+
 
 </div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-sm">
+
+		Modal content
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Private Chat</h4>
+			</div>
+			<div class="modal-body">
+				<div ng-controller="ChatForumController" class="container">
+
+					<p ng-repeat="message in messages | orderBy:'time':false"
+						class="message">
+						<time>{{message.time | date:'HH:mm'}}</time>
+						<span> {{message.message}} </span>
+					</p>
+
+					<form ng-submit="addMessage()" name="messageForm">
+						<input type="textarea" rows="4" cols="100"
+							placeholder="new message..." ng-model="message" /><br>
+							<input type="text" ng-model="id" value=""> 
+						<button>Send</button>
+					</form>
+					<hr />
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
 </div>
+
+</body>
+</html>
